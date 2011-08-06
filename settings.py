@@ -25,8 +25,8 @@ TEMPLATE_CONTEXT_PROCESSORS = (
 
 LOGIN_REDIRECT_URL = '/guestbook/'
 
-ADMIN_MEDIA_PREFIX = '/media/admin/'
-MEDIA_ROOT = os.path.join(os.path.dirname(__file__), 'media')
+ADMIN_MEDIA_PREFIX = '/static/admin/'
+MEDIA_ROOT = os.path.join(os.path.dirname(__file__), 'static')
 TEMPLATE_DIRS = (os.path.join(os.path.dirname(__file__), 'templates'),)
 
 ROOT_URLCONF = 'urls'

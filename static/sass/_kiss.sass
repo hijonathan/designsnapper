@@ -1,0 +1,75 @@
+// KISS Button (sass-ified)
+// Jonathan Kim
+// 7.20.2011
+
+@import "compass/css3"
+
+.kiss
+  +border-radius(5px)
+  +box-shadow(1px 2px 1px rgba(0, 0, 0, 0.1))
+  display: inline-block
+  margin: 0
+  overflow: hidden
+  padding: 1px
+  text-decoration: none !important
+  vertical-align: middle
+  width: auto !important
+  color: #FFF
+  cursor: pointer
+
+  *
+    background-color: transparent
+    border-style: none
+    border-top: 1px solid rgba(255, 255, 255, 0.2)
+    -webkit-border-radius: 5px
+    -moz-border-radius: 5px
+    border-radius: 5px
+    display: block
+    font-weight: bold
+    font-size: 12px
+    padding: .2em .6em
+    line-height: normal
+    margin: 0
+    position: relative
+    text-shadow: 1px 1px 1px rgba(0, 0, 0, 0.2)
+    width: auto !important
+    color: #FFF
+    cursor: pointer
+
+  &:hover
+    background-image: -webkit-gradient(linear, left top, left bottom, color-stop(0, transparent), color-stop(1, rgba(0, 0, 0, 0.1)))
+    background-image: -moz-linear-gradient(top, transparent, rgba(0, 0, 0, 0.1))
+    cursor: pointer
+    text-decoration: none !important
+    color: #FFF
+
+  &.green
+    background-color: #69a846
+
+  &.red
+    background-color: #ad485a
+
+  &.blue
+    background-color: #447ba3
+
+  &.orange
+    background-color: #b8824d
+
+  &.black
+    background-color: #444
+
+  &.medium *
+    font-size: 16px
+
+  &.large *
+    font-size: 24px
+
+  &.arrow.right *
+    padding-right: 1.8em
+    background: transparent url('//d1nu2rn22elx8m.cloudfront.net/static/images/arrow-right_12x12.png') no-repeat 95%
+
+  &.medium.arrow.right *
+    background-image: url('//d1nu2rn22elx8m.cloudfront.net/static/images/arrow-right_16x16.png')
+
+  &.large.arrow.right *
+    background-image: url('//d1nu2rn22elx8m.cloudfront.net/static/images/arrow-right_22x22.png')

@@ -8,14 +8,9 @@ from guestbook.models import Greeting
 
 MEMCACHE_GREETINGS = 'greetings'
 
-def list_greetings(request):
-    greetings = cache.get(MEMCACHE_GREETINGS)
-    if greetings is None:
-        greetings = Greeting.objects.all().order_by('-date')[:10]
-        cache.add(MEMCACHE_GREETINGS, greetings)
-    return direct_to_template(request, 'index.html',
-                              {'greetings': greetings,
-                               'form': CreateGreetingForm()})
+def home(request):
+    snapshots = range(10)
+    return direct_to_template(request, 'index.html', {'snapshots': snapshots,})
 
 def create_greeting(request):
     if request.method == 'POST':
