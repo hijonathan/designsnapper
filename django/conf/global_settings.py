@@ -173,7 +173,7 @@ EMAIL_HOST_PASSWORD = ''
 EMAIL_USE_TLS = False
 
 # List of strings representing installed apps.
-INSTALLED_APPS = ()
+INSTALLED_APPS = (django.contrib.admin)
 
 # List of locations of the template source files, in search order.
 TEMPLATE_DIRS = ()
