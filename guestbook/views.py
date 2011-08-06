@@ -13,7 +13,7 @@ def list_greetings(request):
     if greetings is None:
         greetings = Greeting.objects.all().order_by('-date')[:10]
         cache.add(MEMCACHE_GREETINGS, greetings)
-    return direct_to_template(request, 'guestbook/index.html',
+    return direct_to_template(request, 'index.html',
                               {'greetings': greetings,
                                'form': CreateGreetingForm()})
 
@@ -39,5 +39,5 @@ def create_new_user(request):
             return HttpResponseRedirect('/guestbook/')
     else:
         form = UserCreationForm()
-    return direct_to_template(request, 'guestbook/user_create_form.html',
+    return direct_to_template(request, 'user_create_form.html',
         {'form': form})

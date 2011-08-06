@@ -4,21 +4,12 @@
 <html xmlns="http://www.w3.org/1999/xhtml">
   <head>
     <title>{% block title %}Guestbook{% endblock %}</title>
-    <link type="text/css" rel="stylesheet" href="/media/main.css" />
+    <link href="/guestbook/static/css/screen.css" media="screen, projection" rel="stylesheet" type="text/css" />
   </head>
 
-  <a href="/accounts/create_user/">Create User</a>
-  Hello
-  {% if user.is_authenticated %}
-    {{ user.username }}
-    [<a href="{% url django.contrib.auth.views.logout %}">sign out</a>]
-  {% else %}
-    World!
-    [<a href="{% url django.contrib.auth.views.login %}">sign in</a>]
-  {% endif %}
-
-  {% block content %}{% endblock %}
-
   <body>
+
+    {% block content %}{% endblock %}
+
   </body>
 </html>
