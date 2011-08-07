@@ -1,12 +1,12 @@
-h2. DesignSnapper Overview
+## DesignSnapper Overview
 
 DesignSnapper is a light-weight web app for monitoring changes to web pages over time.
 
-h2. Technical Specs
+## Technical Specs
 
 Built with Django, Python and Google AppEngine. Uses Compass and Sass.
 
-h4. How to run the project locally
+#### How to run the project locally
 
 Install Python and Google AppEngine, then clone the repo.
 
