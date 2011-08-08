@@ -156,17 +156,26 @@ footer, header, hgroup, menu, nav, section {
   background-image: url("//d1nu2rn22elx8m.cloudfront.net/static/images/arrow-right_22x22.png");
 }
 
-/* line 5, ../sass/screen.sass */
+/* line 6, ../sass/screen.sass */
 body {
   font-family: Arial, Helvetica, sans-serif;
-}
-
-/* line 8, ../sass/screen.sass */
-h1 {
-  font-size: 24px;
+  font-size: 13px;
+  line-height: 1.2em;
 }
 
 /* line 11, ../sass/screen.sass */
+h1 {
+  font-size: 20px;
+  line-height: 24px;
+  width: 50%;
+  float: left;
+}
+/* line 17, ../sass/screen.sass */
+h1 a:hover {
+  text-decoration: none;
+}
+
+/* line 20, ../sass/screen.sass */
 header {
   padding: 10px 0;
   margin-bottom: 40px;
@@ -178,54 +187,73 @@ header {
   -o-box-shadow: 0px 0px 5px #333333;
   box-shadow: 0px 0px 5px #333333;
 }
-
-/* line 19, ../sass/screen.sass */
-article {
-  font-size: 13px;
+/* line 28, ../sass/screen.sass */
+header a {
+  color: white;
+  text-shadow: #cccccc 0px 0px 1px;
 }
 
-/* line 22, ../sass/screen.sass */
+/* line 32, ../sass/screen.sass */
+nav {
+  float: right;
+  width: 50%;
+  text-align: right;
+  line-height: 24px;
+}
+/* line 38, ../sass/screen.sass */
+nav li {
+  display: inline;
+  list-style-type: none;
+  margin-left: 1.3em;
+}
+
+/* line 45, ../sass/screen.sass */
 a {
   color: #0f8fed;
   text-decoration: none;
 }
-/* line 26, ../sass/screen.sass */
+/* line 49, ../sass/screen.sass */
 a:hover {
   text-decoration: underline;
 }
 
-/* line 29, ../sass/screen.sass */
-.container {
-  margin: 0 auto;
-  min-width: 960px;
-  max-width: 1040px;
+/* line 52, ../sass/screen.sass */
+.clearfix {
+  overflow: hidden;
+  *zoom: 1;
 }
 
-/* line 35, ../sass/screen.sass */
+/* line 55, ../sass/screen.sass */
+.container {
+  margin: 0 auto;
+  padding: 0 20px;
+}
+
+/* line 60, ../sass/screen.sass */
 .gallery .snapshot {
   float: left;
   width: 32%;
   margin-bottom: 25px;
 }
-/* line 40, ../sass/screen.sass */
+/* line 65, ../sass/screen.sass */
 .gallery .snapshot.middle {
   padding: 0 2%;
 }
-/* line 43, ../sass/screen.sass */
+/* line 68, ../sass/screen.sass */
 .gallery .snapshot img {
   width: 100%;
   border: 1px solid #cccccc;
   margin-bottom: 10px;
 }
-/* line 48, ../sass/screen.sass */
+/* line 73, ../sass/screen.sass */
 .gallery .snapshot .links {
   display: block;
 }
-/* line 51, ../sass/screen.sass */
+/* line 76, ../sass/screen.sass */
 .gallery .snapshot .links .details {
   float: left;
 }
-/* line 53, ../sass/screen.sass */
+/* line 78, ../sass/screen.sass */
 .gallery .snapshot .links .url {
   float: right;
 }

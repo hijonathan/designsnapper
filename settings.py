@@ -10,10 +10,11 @@ INSTALLED_APPS = (
     'django.contrib.auth',
     'django.contrib.contenttypes',
     'django.contrib.sessions',
-    'guestbook',
+    'designsnapper',
 )
 
 MIDDLEWARE_CLASSES = (
+    'django.middleware.common.CommonMiddleware',
     'django.contrib.sessions.middleware.SessionMiddleware',
     'django.contrib.auth.middleware.AuthenticationMiddleware',
 )
@@ -23,7 +24,7 @@ TEMPLATE_CONTEXT_PROCESSORS = (
     'django.core.context_processors.request',
 )
 
-LOGIN_REDIRECT_URL = '/guestbook/'
+LOGIN_REDIRECT_URL = '/designsnapper/'
 
 ADMIN_MEDIA_PREFIX = '/static/admin/'
 MEDIA_ROOT = os.path.join(os.path.dirname(__file__), 'static')

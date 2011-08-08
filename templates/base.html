@@ -2,14 +2,38 @@
      PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN"
      "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
 <html xmlns="http://www.w3.org/1999/xhtml">
-  <head>
-    <title>{% block title %}DesignSnapper{% endblock %}</title>
-    <link href="/static/css/screen.css" media="screen, projection" rel="stylesheet" type="text/css" />
-  </head>
+    <head>
+        <title>{% block title %}DesignSnapper{% endblock %}</title>
+        <link href="/static/css/screen.css" media="screen, projection" rel="stylesheet" type="text/css" />
+    </head>
 
-  <body>
+    <body>
+        <header>
+            <div class="container clearfix">
+                <h1><a href="/">DesignSnapper</a></h1>
+                <nav>
+                    <ul>
+                        <li><a href="/">Pages</a></li>
+                        <li><a href="settings">Settings</a></li>
+                        <li><a href="/accounts/login">Login</a></li>
+                        <li><a href="/accounts/logout">Logout</a></li>
+                    </ul>
+                </nav>
+            </div>
+        </header>
 
-    {% block content %}{% endblock %}
+        <article>
+            <div class="container">
+                {% block content %}{% endblock %}
+            </div>
+        </article>
 
-  </body>
+        <footer>
+        </footer>
+
+        {% block scripts %}
+            <script type="text/javascript" src="//ajax.googleapis.com/ajax/libs/jquery/1.6.2/jquery.min.js"></script>
+        {% endblock %}
+
+    </body>
 </html>
