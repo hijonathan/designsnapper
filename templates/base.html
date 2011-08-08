@@ -7,33 +7,37 @@
         <link href="/static/css/screen.css" media="screen, projection" rel="stylesheet" type="text/css" />
     </head>
 
-    <body>
+    <body {% block body_attrs %}{% endblock %}>
         <header>
             <div class="container clearfix">
                 <h1><a href="/">DesignSnapper</a></h1>
                 <nav>
                     <ul>
+                        {% if user.is_authenticated %}
+                            <li class="username">Hello, {{ user.username }}</li>
+                        {% endif %}
                         <li><a href="/">Pages</a></li>
                         <li><a href="settings">Settings</a></li>
-                        <li><a href="/accounts/login">Login</a></li>
-                        <li><a href="/accounts/logout">Logout</a></li>
+                        {% if user.is_authenticated %}
+                            <li><a href="/accounts/logout">Logout</a></li>
+                        {% else %}
+                            <li><a href="/accounts/login">Login</a></li>
+                        {% endif %}
                     </ul>
                 </nav>
             </div>
         </header>
 
-        <article>
-            <div class="container">
-                {% block content %}{% endblock %}
-            </div>
-        </article>
+        <div id="content" class="clearfix">
+            {% block content %}{% endblock %}
+        </div>
 
         <footer>
         </footer>
 
-        {% block scripts %}
-            <script type="text/javascript" src="//ajax.googleapis.com/ajax/libs/jquery/1.6.2/jquery.min.js"></script>
-        {% endblock %}
+        <script type="text/javascript" src="//ajax.googleapis.com/ajax/libs/jquery/1.6.2/jquery.min.js"></script>
+        <script type="text/javascript" src="/static/js/compiled/core.js"></script>
+        {% block scripts %}{% endblock %}
 
     </body>
 </html>

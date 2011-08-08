@@ -1,27 +1,63 @@
 @import "compass/reset"
 @import "compass/css3"
 @import "compass/utilities/general/clearfix"
+@import "compass/utilities/tables/alternating-rows-and-columns"
+
+@import "mixins"
 @import "kiss"
 
 body
     font-family: Arial, Helvetica, sans-serif
     font-size: 13px
     line-height: 1.2em
+    color: #666
+    
+    &.h-scroll
+        h2
+            position: fixed
+            width: 100%
 
+        article
+            width: inherit
+            margin-top: 60px
+    
 h1
     font-size: 20px
-    line-height: 24px
+    line-height: 40px
     width: 50%
     float: left
     
     a:hover
         text-decoration: none
-    
+
+h2
+    font-size: 24px
+    line-height: 1.3em
+    font-weight: bold
+    color: #666
+    padding-bottom: 10px
+    margin: 0 20px
+    border-bottom: 3px solid #eee
+
+h3
+    font-size: 18px
+    line-height: 1.3em
+    font-weight: bold
+    color: #444
+    margin-bottom: 10px
+
+h4
+    font-size: 14px
+    line-height: 1.3em
+    margin-bottom: 10px
+
 header
-    padding: 10px 0
-    margin-bottom: 40px
     background: #222
     color: #fff
+    position: fixed
+    z-index: 10
+    width: 100%
+    height: 40px
     +single-text-shadow(#ccc)
     +single-box-shadow
 
@@ -33,14 +69,57 @@ nav
     float: right
     width: 50%
     text-align: right
-    line-height: 24px
+    line-height: 40px
     
     li
-        display: inline
+        display: inline-block
         list-style-type: none
-        margin-left: 1.3em
+        padding-left: 1.3em
+        
+        &.username
+            padding-right: 1.3em
+            border-right: 1px solid #ccc
 
 article
+    margin-top: 20px
+
+    &.with-sidebar
+        width: 66%
+        float: left
+        
+        .container
+            padding-right: 0
+
+aside
+    padding-top: 20px
+    min-width: 320px
+    max-width: 33%
+    height: 100%
+    float: left
+    
+    &.fixed
+        position: fixed
+        right: 0
+        background-color: rgba(255,255,255,.95)
+        width: 320px
+        border-left: 1px solid #eee
+        padding-top: 20px
+        margin-top: 44px
+        +single-box-shadow(#aaa, -3px, 2px)
+        
+
+section
+
+    &.page
+        margin-bottom: 40px
+        float: left
+        margin-right: 40px
+        
+        img
+            width: 100%
+            border: 1px solid #ccc
+            +single-box-shadow(#ccc, 2px, 2px)
+            width: 400px
 
 a
     color: #0f8fed
@@ -49,11 +128,24 @@ a
     &:hover
         text-decoration: underline
 
+table
+    +alternate-rows
+    width: 100%
+
+    td, th
+        padding: 15px
+
+    th
+        background-color: #222
+        color: #fff
+
 .clearfix
     +clearfix
 
+#content
+    padding-top: 74px
+
 .container
-    margin: 0 auto
     padding: 0 20px
 
 .gallery
@@ -69,6 +161,7 @@ a
             width: 100%
             border: 1px solid #ccc
             margin-bottom: 10px
+            width: 400px
         
         .links
             display: block
@@ -77,3 +170,7 @@ a
                 float: left
             .url
                 float: right
+
+.loupe
+    border: 1px solid #222
+    +single-box-shadow

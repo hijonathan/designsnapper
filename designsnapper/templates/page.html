@@ -1,0 +1,38 @@
+{% extends 'base.html' %}
+
+{% block body_attrs %}
+
+    class="h-scroll" style="width: {{ layout.width }}px"
+
+{% endblock %}
+
+{% block content %}
+
+    <h2>Profile of {{ page.name }}</h2>
+    <article class="with-sidebar">
+        <div class="page-gallery container">
+            {% for screenshots in page.screenshots %}
+                <section class="page">
+                    <h4>Taken on August 9, 2011</h4>
+                    <img src="/static/images/turningart.png" />
+                </section>
+            {% endfor %}
+        </div>
+    </article>
+    
+    <aside class="fixed">
+        <div class="container">
+            <h3>This Page's History</h3>
+            <p>
+                You're looking at the history of this page that we've been able to collect.
+            </p>
+        </div>
+    </aside>
+
+{% endblock %}
+
+{% block scripts %}
+
+    <script type="text/javascript" src="/static/js/compiled/jquery.loupe.min.js"></script>
+
+{% endblock %}

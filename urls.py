@@ -10,7 +10,7 @@ urlpatterns = patterns('',
     (r'^accounts/create/$', 'designsnapper.views.create_new_user'),
     (r'^accounts/login/$', 'django.contrib.auth.views.login',
         {'authentication_form': AuthenticationForm,
-        'template_name': 'designsnapper/login.html',}),
+        'template_name': 'login.html',}),
     (r'^accounts/logout/$', 'django.contrib.auth.views.logout',
         {'next_page': '/designsnapper/',}),
 )

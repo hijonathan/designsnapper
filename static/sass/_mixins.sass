@@ -1,0 +1,12 @@
+=alternate-rows($odd: #eee, $even: transparent, $header: #222, $footer: #222)
+    th
+        background-color: $header
+
+    tfoot
+        background-color: $footer
+
+    tr:nth-child(even)
+        background-color: $even
+
+    tr:nth-child(odd)
+        background-color: $odd

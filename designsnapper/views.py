@@ -1,7 +1,12 @@
+import random
+from urlparse import urlparse
+
 from django.core.cache import cache
 from django.contrib.auth.forms import UserCreationForm
 from django.views.generic.simple import direct_to_template
 from django.http import HttpResponseRedirect
+from django.template import RequestContext
+
 from designsnapper.handlers import Client
 from designsnapper.forms import CreateGreetingForm
 from designsnapper.models import Greeting
@@ -10,7 +15,7 @@ MEMCACHE_GREETINGS = 'greetings'
 
 def client(func):
     def add_client(self, *args):
-        account_id = 1
+        #self.account_id = 1
 
         #self.current_user = int(self.account_id)
         #self.snapper = Client(self.current_user)
@@ -36,8 +41,52 @@ def home(request):
 def settings(request):
     """View a list of all the pages you're currently monitoring"""
     
-    pages = ['http://www.apple.com', 'http://www.woothemes.com/', 'http://postmarkapp.com/', 'http://carbonmade.com/']
+    pages = [{
+        'url': 'http://www.apple.com',
+        'guid': 'abcdefg',
+        'status': random.randint(0,1),
+        'screenshots': random.randint(1,3000)
+        }, {
+        'url': 'http://www.woothemes.com/',
+        'guid': 'abcdefg',
+        'status': random.randint(0,1),
+        'screenshots': random.randint(1,3000)
+        }, {
+        'url': 'http://postmarkapp.com/',
+        'guid': 'abcdefg',
+        'status': random.randint(0,1),
+        'screenshots': random.randint(1,3000)
+        }, {
+        'url': 'http://carbonmade.com/',
+        'guid': 'abcdefg',
+        'status': random.randint(0,1),
+        'screenshots': random.randint(1,3000)
+        }]
+
     return direct_to_template(request, 'settings.html', {'pages': pages,})
+
+@client
+def page(request):
+    url = urlparse('http://www.turningart.com/')
+    clean_url = "%s%s" % (url.netloc, url.path)
+
+    """Dive into the history of an individual URL resource"""
+
+    screenshots = range(10)
+    
+    layout = {
+        'width': len(screenshots) * 445 + 300
+    }
+
+    page = {
+        'url': url,
+        'name': clean_url,
+        'guid': 'abcdefg',
+        'status': random.randint(0,1),
+        'screenshots': screenshots
+        }
+
+    return direct_to_template(request, 'page.html', {'page': page, 'layout': layout})
 
 @client
 def add_pages(request):
