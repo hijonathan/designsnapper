@@ -75,7 +75,7 @@ def page(request):
     screenshots = range(10)
     
     layout = {
-        'width': len(screenshots) * 445 + 300
+        'screenshot_count': len(screenshots)
     }
 
     page = {

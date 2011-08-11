@@ -5,6 +5,9 @@
     <head>
         <title>{% block title %}DesignSnapper{% endblock %}</title>
         <link href="/static/css/screen.css" media="screen, projection" rel="stylesheet" type="text/css" />
+        
+        {% block head %}{% endblock %}
+        
     </head>
 
     <body {% block body_attrs %}{% endblock %}>

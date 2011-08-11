@@ -12,15 +12,6 @@ body
     line-height: 1.2em
     color: #666
     
-    &.h-scroll
-        h2
-            position: fixed
-            width: 100%
-
-        article
-            width: inherit
-            margin-top: 60px
-    
 h1
     font-size: 20px
     line-height: 40px
@@ -111,19 +102,17 @@ aside
 section
 
     &.page
-        margin-bottom: 40px
         float: left
         margin-right: 40px
         
         img
-            width: 100%
             border: 1px solid #ccc
             +single-box-shadow(#ccc, 2px, 2px)
-            width: 400px
 
 a
     color: #0f8fed
     text-decoration: none
+    cursor: pointer
     
     &:hover
         text-decoration: underline
@@ -140,7 +129,7 @@ table
         color: #fff
 
 .clearfix
-    +clearfix
+    +pie-clearfix
 
 #content
     padding-top: 74px
@@ -151,17 +140,16 @@ table
 .gallery
     .snapshot
         float:  left
-        width: 32%
-        margin-bottom: 25px
+        width: 30%
+        margin-bottom: 45px
         
         &.middle
-            padding: 0 2%
+            padding: 0 5%
         
         img
             width: 100%
             border: 1px solid #ccc
             margin-bottom: 10px
-            width: 400px
         
         .links
             display: block
@@ -170,6 +158,37 @@ table
                 float: left
             .url
                 float: right
+
+.header
+    position: fixed
+    width: 100%
+
+    .links
+        float: right
+        position: relative
+        right: 20px
+        top: -30px
+        width: 400px
+        text-align: right
+        
+        span
+            margin-left: 20px
+
+            &.off
+                display: none
+
+.page-gallery
+    margin-top: 60px
+    width: 100%
+
+    section.page
+        margin-bottom: 40px
+        
+        img
+            visibility: hidden
+
+        &.last
+            margin-right: 0
 
 .loupe
     border: 1px solid #222

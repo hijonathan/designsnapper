@@ -11,6 +11,7 @@ $ ->
         else if current_position == 0
             header.stop(true).animate opacity: 1
             header_opacity = 1
+        $('.loupe').hide()
     
     before_hover = header.css('opacity')
     header.mouseenter ->
@@ -18,4 +19,9 @@ $ ->
     header.mouseleave ->
         header.animate opacity: header_opacity
     
-    $('.page-gallery .page img').loupe({ width: 320, height: 240 })
+    # Gallery
+    $.ajax({
+       type: "GET",
+       url: "/static/js/compiled/gallery.js",
+       dataType: "script"
+     });
