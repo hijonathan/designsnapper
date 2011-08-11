@@ -11,7 +11,6 @@ $ ->
         else if current_position == 0
             header.stop(true).animate opacity: 1
             header_opacity = 1
-        $('.loupe').hide()
     
     before_hover = header.css('opacity')
     header.mouseenter ->

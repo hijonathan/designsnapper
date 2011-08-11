@@ -10,14 +10,13 @@
         header.stop(false, true).animate({
           opacity: .35
         });
-        header_opacity = .35;
+        return header_opacity = .35;
       } else if (current_position === 0) {
         header.stop(true).animate({
           opacity: 1
         });
-        header_opacity = 1;
+        return header_opacity = 1;
       }
-      return $('.loupe').hide();
     });
     before_hover = header.css('opacity');
     header.mouseenter(function() {
