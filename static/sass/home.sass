@@ -1,0 +1,39 @@
+@import "compass/reset"
+@import "compass/css3"
+@import "compass/utilities/general/clearfix"
+
+@import "constants"
+@import "mixins"
+@import "kiss"
+
+body
+    font-family: $font
+    line-height: 1.3em
+
+h1, h2, h3, h4, h5, h6, p
+    line-height: 1.3em
+
+h1
+    font-size: 42px
+    font-weight: bold
+    +text-shadow(#ccc 2px 2px)
+
+h2
+    font-size: 18px
+    margin-bottom: 20px
+    color: #444
+    +single-text-shadow(#ccc)
+
+section
+    width: 800px
+    margin: 10% auto 0
+    text-align: center
+
+input
+    width: 400px
+    height: 20px
+    padding: 4px 6px
+    font-size: 16px
+    border: none
+    border: 1px solid #ccc
+    

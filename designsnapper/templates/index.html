@@ -1,12 +1,27 @@
-{% extends 'base.html' %}
+{% extends 'no-nav.html' %}
+
+{% block head %}
+
+    <link href="/static/css/home.css" media="screen, projection" rel="stylesheet" type="text/css" />
+
+{% endblock %}
+
+{% block body_attrs %}
+
+    id="home"
+
+{% endblock %}
 
 {% block content %}
 
-    <h2>Dashboard</h2>
-    <article>
+    <section>
+        <h1>Monitor Your Competitors</h1>
+        <h2>Every redesign. Every pricing change. Everything, visually analyzed.</h2>
         <div class="container">
-            {% include 'snapshot-list.html' %}
+            <form action="page#tour" method="get">
+                <input name="web-url" type="text" placeholder="http://www.apple.com/">
+            </form>
         </div>
-    </article>
+    </section>
 
 {% endblock %}

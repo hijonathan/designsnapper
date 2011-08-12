@@ -1,0 +1,82 @@
+@import "base"
+@import "guiders"
+
+#content
+    padding-top: 74px
+
+.gallery
+    .snapshot
+        float:  left
+        width: 30%
+        margin-bottom: 45px
+        
+        &.middle
+            padding: 0 5%
+        
+        img
+            width: 100%
+            border: 1px solid #ccc
+            margin-bottom: 10px
+        
+        .links
+            display: block
+            
+            .details
+                float: left
+            .url
+                float: right
+
+.header
+    position: fixed
+    width: 100%
+
+    .links
+        float: right
+        position: relative
+        right: 20px
+        top: -30px
+        width: 400px
+        text-align: right
+        
+        span
+            margin-left: 20px
+
+            &.off
+                display: none
+
+// Specific situation for tiling
+#content.tiled
+    .header
+        position: static
+
+    article
+        margin-top: 15px
+
+.page-gallery
+    margin-top: 60px
+    width: 100%
+
+    section.page
+        float: left
+        margin-right: 40px
+        margin-bottom: 40px
+        
+        img
+            border: 1px solid #ccc
+            visibility: hidden
+            +single-box-shadow(#ccc, 2px, 2px)
+
+        &.last
+            margin-right: 0
+
+.tiled
+    overflow-x: hidden
+
+.loupe
+    border: 1px solid #222
+    +single-box-shadow
+    
+    &.page
+        float: left
+        margin-right: 40px
+    
