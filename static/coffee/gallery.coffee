@@ -46,44 +46,42 @@ $ ->
     if hashTag is "#tour"
         # Start guided tour
         guiders.createGuider({
+            title: "Welcome to DesignSnapper."
+            description: "DesignSnapper is a light-weight piece of software that monitors your competitors' websites to track and analyze changes over time. Click to get started.",
             buttons: [{name: "Next"}],
-            description: "Guiders are a user interface design pattern for introducing features of software. This dialog box, for example, is the first in a series of guiders that together make up a guide.",
             id: "first",
             next: "second",
             overlay: true,
-            title: "Welcome to Guiders.js!"
         })
         .show();
 
         guiders.createGuider({
             attachTo: ".page:first",
+            title: "Beautiful, high-res snapshots."
+            description: "We collect snapshots of the pages you're monitoring and show you a visual history of that page over time. In addition to our auto-generated annoations, you can also add your own.",
             buttons: [{name: "Close"},
                     {name: "Next"}],
-            description: "For example, this guider is attached to the 12 o'clock direction relative to the attached element. The Guiders.js API uses a clock model to determine where the guider should be placed.<br/><br/>Attaching a guider to an element focuses user on the area of interest.",
             id: "second",
             next: "third",
             position: 3,
-            title: "Guiders are typically attached to an element on the page."
-        });
-
-        guiders.createGuider({
-            attachTo: ".toggle-loupe",
-            buttons: [{name: "Close, then click on the clock.", onclick: guiders.hideAll}],
-            description: "Custom event handlers can be used to hide and show guiders. This allows you to interactively show the user how to use your software by having them complete steps. To try it, click on the clock.",
-            id: "third",
-            next: "fourth",
-            position: 9,
-            title: "You can advance guiders from custom event handlers.",
-            width: 500
         });
 
         guiders.createGuider({
             attachTo: ".tile-pages",
+            title: "A flexible interface.",
+            description: "Sort and manipulate the changes as your archive gets richer over time. Go ahead: try it out.",
+            buttons: [{name: "Close, then tile.", onclick: guiders.hideAll}],
+            id: "third",
+            next: "fourth",
+            position: 5,
+            width: 500
+        });
+
+        guiders.createGuider({
+            title: "Holy smokes, did you see that?",
+            description: "Feel free to experiment with all the features we have to offer. Thanks for checking out DesignSnapper, brought to you by Vaporware.",
             buttons: [{name: "Finish", onclick: guiders.hideAll}]
             buttonCustomHTML: "<input type=\"checkbox\" id=\"stop_showing\" /><label for=\"stop_showing\" class=\"stopper\">Stop showing these. (Not implemented)</label>",
-            description: "Other aspects of the guider can be customized as well, such as the button names, button onclick handlers, and dialog widths. You'd also want to modify the CSS to your own project's style.",
             id: "fourth",
-            position: 5,
-            title: "Guiders can be customized.",
-            width: 600
+            overlay: true
         });
