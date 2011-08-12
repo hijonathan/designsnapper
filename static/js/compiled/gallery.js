@@ -27,20 +27,21 @@
     });
     return $('.tile-pages').click(function() {
       $('.tile-pages span').toggle();
-      if ($('.page-gallery').hasClass('tiled')) {
+      if ($('#content').hasClass('tiled')) {
         return page.fadeOut(function() {
           pageImg.css({
             width: 'auto',
             height: windowHeight - 230
           });
           imgWidth = $('.page-gallery .page').first().width();
-          return $('.page-gallery').css({
+          $('.page-gallery').css({
             width: screenshotCount * (imgWidth + 40) - 40
-          }).removeClass('tiled');
+          });
+          return $('#content').removeClass('tiled');
         }).fadeIn();
       } else {
         page.fadeOut();
-        return $('.page-gallery').animate({
+        $('.page-gallery').animate({
           width: windowWidth
         }, function() {
           pageImg.css({
@@ -48,7 +49,8 @@
             width: 240
           });
           return page.fadeIn();
-        }).addClass('tiled');
+        });
+        return $('#content').addClass('tiled');
       }
     });
   });

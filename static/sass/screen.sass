@@ -177,6 +177,14 @@ table
             &.off
                 display: none
 
+// Specific situation for tiling
+#content.tiled
+    .header
+        position: static
+
+    article
+        margin-top: 15px
+
 .page-gallery
     margin-top: 60px
     width: 100%
@@ -189,6 +197,9 @@ table
 
         &.last
             margin-right: 0
+
+.tiled
+    overflow-x: hidden
 
 .loupe
     border: 1px solid #222

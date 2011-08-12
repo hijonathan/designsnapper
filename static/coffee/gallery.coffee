@@ -21,13 +21,14 @@ $ ->
 
     $('.tile-pages').click ->
         $('.tile-pages span').toggle()
-        if $('.page-gallery').hasClass('tiled')
+        if $('#content').hasClass('tiled')
             page.fadeOut( ->
                 pageImg.css({ width: 'auto', height: (windowHeight - 230) })
                 
                 imgWidth = $('.page-gallery .page').first().width()
 
-                $('.page-gallery').css({ width: screenshotCount * (imgWidth + 40) - 40 }).removeClass('tiled')
+                $('.page-gallery').css({ width: screenshotCount * (imgWidth + 40) - 40 })
+                $('#content').removeClass('tiled')
             ).fadeIn()
         
         else
@@ -35,4 +36,5 @@ $ ->
             $('.page-gallery').animate({ width: windowWidth }, ->
                 pageImg.css({ height: 'auto', width: 240 })
                 page.fadeIn()
-            ).addClass('tiled')
+            )
+            $('#content').addClass('tiled')

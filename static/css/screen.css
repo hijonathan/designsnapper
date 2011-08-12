@@ -406,25 +406,39 @@ table th {
   display: none;
 }
 
-/* line 180, ../sass/screen.sass */
+/* line 182, ../sass/screen.sass */
+#content.tiled .header {
+  position: static;
+}
+/* line 185, ../sass/screen.sass */
+#content.tiled article {
+  margin-top: 15px;
+}
+
+/* line 188, ../sass/screen.sass */
 .page-gallery {
   margin-top: 60px;
   width: 100%;
 }
-/* line 184, ../sass/screen.sass */
+/* line 192, ../sass/screen.sass */
 .page-gallery section.page {
   margin-bottom: 40px;
 }
-/* line 187, ../sass/screen.sass */
+/* line 195, ../sass/screen.sass */
 .page-gallery section.page img {
   visibility: hidden;
 }
-/* line 190, ../sass/screen.sass */
+/* line 198, ../sass/screen.sass */
 .page-gallery section.page.last {
   margin-right: 0;
 }
 
-/* line 193, ../sass/screen.sass */
+/* line 201, ../sass/screen.sass */
+.tiled {
+  overflow-x: hidden;
+}
+
+/* line 204, ../sass/screen.sass */
 .loupe {
   border: 1px solid #222222;
   -moz-box-shadow: 0px 0px 5px #333333;
