@@ -1,5 +1,11 @@
 {% extends 'base.html' %}
 
+{% block head %}
+    <link href="/static/css/app.css" media="screen, projection" rel="stylesheet" type="text/css" />
+{% endblock %}
+
+
+
 {% block content %}
 
     <h2>Pages</h2>
@@ -7,6 +13,7 @@
         <div class="container">
             <table class="pages-table" border="0" cellspacing="15" cellpadding="15">
                 <tr>
+                    <th><input type="checkbox"></th>
                     <th>Page you're monitoring</th>
                     <th>Screenshots</th>
                     <th>Status</th>
@@ -15,6 +22,7 @@
                 </tr>
                 {% for page in pages %}
                     <tr>
+                        <td><input type="checkbox" name="delete[]" value="{{ page.guid }}"></td>
                         <td>{{ page.url }}</td>
                         <td>{{ page.screenshots }}</td>
                         {% if page.status %}
@@ -39,4 +47,8 @@
         </div>
     </aside>
 
+{% endblock %}
+
+{% block scripts %}
+    <script type="text/javascript" src="/static/js/compiled/jquery.sparkline.min.js"></script>
 {% endblock %}

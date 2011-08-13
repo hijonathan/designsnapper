@@ -1,5 +1,9 @@
 {% extends 'base.html' %}
 
+{% block head %}
+    <link href="/static/css/app.css" media="screen, projection" rel="stylesheet" type="text/css" />
+{% endblock %}
+
 {% block content %}
 
   {% if form.errors %}
