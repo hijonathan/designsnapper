@@ -11,6 +11,7 @@ INSTALLED_APPS = (
     'django.contrib.contenttypes',
     'django.contrib.sessions',
     'designsnapper',
+    'django.contrib.admin',
 )
 
 MIDDLEWARE_CLASSES = (
