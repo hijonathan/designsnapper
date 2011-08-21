@@ -4,6 +4,11 @@ import os
 
 SECRET_KEY = '=r-$b*8hglm+858&9t043hlm6-&6-3d3vfc4((7yd0dbrakhvi'
 
+# Activate django-dbindexer for the default database
+DATABASES['native'] = DATABASES['default']
+DATABASES['default'] = {'ENGINE': 'dbindexer', 'TARGET': 'native'}
+DBINDEXER_SITECONF = 'dbindexes'
+
 INSTALLED_APPS = (
     'djangoappengine',
     'djangotoolbox',
@@ -12,6 +17,7 @@ INSTALLED_APPS = (
     'django.contrib.sessions',
     'designsnapper',
     'django.contrib.admin',
+    'dbindexer',
 )
 
 MIDDLEWARE_CLASSES = (
