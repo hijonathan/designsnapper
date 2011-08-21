@@ -23,7 +23,7 @@
                 {% for page in pages %}
                     <tr>
                         <td><input type="checkbox" name="delete[]" value="{{ page.guid }}"></td>
-                        <td>{{ page.url }}</td>
+                        <td>{{ titles }} | {{ page.url }}</td>
                         <td>{{ page.screenshots }}</td>
                         {% if page.status %}
                             <td class="status-false">Broken</td>

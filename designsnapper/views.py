@@ -1,6 +1,9 @@
 import random
+import urllib2
 from datetime import date
 from urlparse import urlparse
+
+from BeautifulSoup import BeautifulSoup
 
 from django.core.cache import cache
 from django.contrib.auth.forms import UserCreationForm
@@ -14,6 +17,7 @@ from django.utils import simplejson
 from django.template import RequestContext
 
 from designsnapper.handlers import Client
+from designsnapper.handlers import Page
 
 def client(func):
     def add_client(self, *args):
@@ -54,8 +58,10 @@ class ManageView(View):
     @client
     def get(self, request):
         pages = get_all_pages(0001)
+        soup = BeautifulSoup(urllib2.urlopen('http://www.turningart.com'))
+        titles = [soup.html.head.title]
 
-        return render_to_response('manage.html', {'pages': pages})
+        return render_to_response('manage.html', {'pages': pages, 'titles': titles})
 
 
 class PageView(View):

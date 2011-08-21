@@ -2,19 +2,14 @@ $ ->
     url = window.location.href;
     hashTag = url.substr(url.indexOf('#'));
 
+    # Calulate window size to setup the default view
     windowWidth = window.innerWidth - 20
     windowHeight = window.innerHeight
     
     page = $('.page-gallery .page')
     pageImg = $('.page-gallery .page img')
 
-    pageImg.css({ height: (windowHeight - 230) })
-    .css({ 'visibility': 'visible'})
-
-    imgWidth = $('.page-gallery .page').first().width()
-
-    $('.page-gallery').css({ width: screenshotCount * (imgWidth + 40) - 40 })
-
+    # Handle turning loupe on and off
     $('.toggle-loupe').click ->
         $('.toggle-loupe span').toggle()
         if pageImg.data('loupe')
@@ -22,27 +17,30 @@ $ ->
         else
             pageImg.loupe({ width: 320, height: 240 })
 
+    # Handle tiled and full-height modes
     $('.tile-pages').click ->
         $('.tile-pages span').toggle()
-        if $('#content').hasClass('tiled')
+        if (!$('#content').hasClass('full'))
             page.fadeOut( ->
                 pageImg.css({ width: 'auto', height: (windowHeight - 230) })
                 
                 imgWidth = $('.page-gallery .page').first().width()
 
                 $('.page-gallery').css({ width: screenshotCount * (imgWidth + 40) - 40 })
-                $('#content').removeClass('tiled')
+                $('#content').addClass('full')
             ).fadeIn()
         
         else
+            console.log('executing else statement')
             page.fadeOut()
-            $('.page-gallery').animate({ width: windowWidth }, ->
-                pageImg.css({ height: 'auto', width: 240 })
+            $('.page-gallery').animate({ width: windowWidth - 40 }, ->
+                pageImg.css({ height: 'auto', width: 250 })
                 page.fadeIn()
             )
-            $('#content').addClass('tiled')
+            $('#content').removeClass('full')
         guiders.next()
 
+    # Enable the guided tour only if the hash exists
     if hashTag is "#tour"
         # Start guided tour
         guiders.createGuider({

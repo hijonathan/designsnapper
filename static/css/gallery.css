@@ -469,29 +469,27 @@ table th {
 }
 /* line 16, ../sass/gallery.sass */
 .gallery .snapshot img {
-  width: 100%;
   border: 1px solid #cccccc;
   margin-bottom: 10px;
 }
-/* line 21, ../sass/gallery.sass */
+/* line 20, ../sass/gallery.sass */
 .gallery .snapshot .links {
   display: block;
 }
-/* line 24, ../sass/gallery.sass */
+/* line 23, ../sass/gallery.sass */
 .gallery .snapshot .links .details {
   float: left;
 }
-/* line 26, ../sass/gallery.sass */
+/* line 25, ../sass/gallery.sass */
 .gallery .snapshot .links .url {
   float: right;
 }
 
-/* line 29, ../sass/gallery.sass */
+/* line 28, ../sass/gallery.sass */
 .header {
-  position: fixed;
   width: 100%;
 }
-/* line 33, ../sass/gallery.sass */
+/* line 31, ../sass/gallery.sass */
 .header .links {
   float: right;
   position: relative;
@@ -500,55 +498,49 @@ table th {
   width: 400px;
   text-align: right;
 }
-/* line 41, ../sass/gallery.sass */
+/* line 39, ../sass/gallery.sass */
 .header .links span {
   margin-left: 20px;
 }
-/* line 44, ../sass/gallery.sass */
+/* line 42, ../sass/gallery.sass */
 .header .links span.off {
   display: none;
 }
 
-/* line 49, ../sass/gallery.sass */
-#content.tiled .header {
-  position: static;
+/* line 47, ../sass/gallery.sass */
+#content.full .header {
+  position: fixed;
 }
-/* line 52, ../sass/gallery.sass */
-#content.tiled article {
-  margin-top: 15px;
+/* line 50, ../sass/gallery.sass */
+#content.full article {
+  margin-top: 60px;
 }
 
-/* line 55, ../sass/gallery.sass */
+/* line 54, ../sass/gallery.sass */
 .page-gallery {
-  margin-top: 60px;
-  width: 100%;
+  margin-top: 15px;
 }
-/* line 59, ../sass/gallery.sass */
+/* line 57, ../sass/gallery.sass */
 .page-gallery section.page {
   float: left;
   margin-right: 40px;
   margin-bottom: 40px;
 }
-/* line 64, ../sass/gallery.sass */
+/* line 62, ../sass/gallery.sass */
 .page-gallery section.page img {
   border: 1px solid #cccccc;
-  visibility: hidden;
   -moz-box-shadow: 2px 2px 5px #cccccc;
   -webkit-box-shadow: 2px 2px 5px #cccccc;
   -o-box-shadow: 2px 2px 5px #cccccc;
   box-shadow: 2px 2px 5px #cccccc;
+  width: 250px;
 }
-/* line 69, ../sass/gallery.sass */
+/* line 67, ../sass/gallery.sass */
 .page-gallery section.page.last {
   margin-right: 0;
 }
 
-/* line 72, ../sass/gallery.sass */
-.tiled {
-  overflow-x: hidden;
-}
-
-/* line 75, ../sass/gallery.sass */
+/* line 70, ../sass/gallery.sass */
 .loupe {
   border: 1px solid #222222;
   -moz-box-shadow: 0px 0px 5px #333333;
@@ -556,7 +548,7 @@ table th {
   -o-box-shadow: 0px 0px 5px #333333;
   box-shadow: 0px 0px 5px #333333;
 }
-/* line 79, ../sass/gallery.sass */
+/* line 74, ../sass/gallery.sass */
 .loupe.page {
   float: left;
   margin-right: 40px;

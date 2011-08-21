@@ -18,9 +18,9 @@ $ ->
     header.mouseleave ->
         header.animate opacity: header_opacity
     
-    # Gallery
-    $.ajax({
-       type: "GET",
-       url: "/static/js/compiled/gallery.js",
-       dataType: "script"
-     });
+    # # Gallery
+    # $.ajax({
+    #    type: "GET",
+    #    url: "/static/js/compiled/gallery.js",
+    #    dataType: "script"
+    #  });
