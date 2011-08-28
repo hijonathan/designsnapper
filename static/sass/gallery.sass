@@ -14,7 +14,6 @@
             padding: 0 5%
         
         img
-            width: 100%
             border: 1px solid #ccc
             margin-bottom: 10px
         
@@ -27,7 +26,6 @@
                 float: right
 
 .header
-    position: fixed
     width: 100%
 
     .links
@@ -45,16 +43,16 @@
                 display: none
 
 // Specific situation for tiling
-#content.tiled
+#content.full
     .header
-        position: static
+        position: fixed
 
     article
-        margin-top: 15px
+        margin-top: 60px
+
 
 .page-gallery
-    margin-top: 60px
-    width: 100%
+    margin-top: 15px
 
     section.page
         float: left
@@ -63,14 +61,11 @@
         
         img
             border: 1px solid #ccc
-            visibility: hidden
             +single-box-shadow(#ccc, 2px, 2px)
+            width: 250px
 
         &.last
             margin-right: 0
-
-.tiled
-    overflow-x: hidden
 
 .loupe
     border: 1px solid #222

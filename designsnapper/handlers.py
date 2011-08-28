@@ -1,9 +1,12 @@
 import re
 import hmac
 import base64
-import urllib
 import httplib
 import logging
+
+import urllib2
+
+import BeautifulSoup as soup
 
 try:
     import hashlib
@@ -48,11 +51,11 @@ class BaseClient(object):
         
         if not url: url = '/%s?%s' %(
             self._create_path(method),
-            urllib.urlencode(params)
+            urllib2.urlencode(params)
         )
         
         if data and not isinstance(data, str):
-            data = urllib.urlencode(data)
+            data = urllib2.urlencode(data)
         
         headers = {'Content-Type': content_type}
         client.request(request_method, url, data, headers)
@@ -100,3 +103,37 @@ class Client(BaseClient):
 
     def refresh_page(self, page_guid):
         return self._make_request('pages/%s/refresh' % page_guid, {})
+
+class BaseClass(object):
+    """Base client for setting defaults"""
+
+
+class Page(BaseClass):
+    """Handles fetching and displaying information for monitored pages""" 
+
+    def get_title(self):
+        page = soup(urllib2.urlopen('http://www.turningart.com'))
+        
+        return page.html.head.title
+
+class Thumbalizr(BaseClass):
+    """Handles logic and actions for getting snapshots"""
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    

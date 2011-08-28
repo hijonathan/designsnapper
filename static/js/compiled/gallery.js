@@ -1,21 +1,12 @@
 (function() {
   $(function() {
-    var hashTag, imgWidth, page, pageImg, url, windowHeight, windowWidth;
+    var hashTag, page, pageImg, url, windowHeight, windowWidth;
     url = window.location.href;
     hashTag = url.substr(url.indexOf('#'));
     windowWidth = window.innerWidth - 20;
     windowHeight = window.innerHeight;
     page = $('.page-gallery .page');
     pageImg = $('.page-gallery .page img');
-    pageImg.css({
-      height: windowHeight - 230
-    }).css({
-      'visibility': 'visible'
-    });
-    imgWidth = $('.page-gallery .page').first().width();
-    $('.page-gallery').css({
-      width: screenshotCount * (imgWidth + 40) - 40
-    });
     $('.toggle-loupe').click(function() {
       $('.toggle-loupe span').toggle();
       if (pageImg.data('loupe')) {
@@ -29,8 +20,9 @@
     });
     $('.tile-pages').click(function() {
       $('.tile-pages span').toggle();
-      if ($('#content').hasClass('tiled')) {
+      if (!$('#content').hasClass('full')) {
         page.fadeOut(function() {
+          var imgWidth;
           pageImg.css({
             width: 'auto',
             height: windowHeight - 230
@@ -39,20 +31,21 @@
           $('.page-gallery').css({
             width: screenshotCount * (imgWidth + 40) - 40
           });
-          return $('#content').removeClass('tiled');
+          return $('#content').addClass('full');
         }).fadeIn();
       } else {
+        console.log('executing else statement');
         page.fadeOut();
         $('.page-gallery').animate({
-          width: windowWidth
+          width: windowWidth - 40
         }, function() {
           pageImg.css({
             height: 'auto',
-            width: 240
+            width: 250
           });
           return page.fadeIn();
         });
-        $('#content').addClass('tiled');
+        $('#content').removeClass('full');
       }
       return guiders.next();
     });

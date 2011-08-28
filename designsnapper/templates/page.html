@@ -9,24 +9,18 @@
     </script>
 {% endblock %}
 
-{% block body_attrs %}
-
-    class="h-scroll"
-
-{% endblock %}
-
 {% block content %}
 
     <div class="header">
         <h2>Profile of {{ page.name }}</h2>
         <div class="links">
             <a class="tile-pages">
-                <span class="on">Tile All</span>
-                <span class="off">Full Screen</span>
+                <span class="on">Full screen</span>
+                <span class="off">Tile all</span>
             </a>
             <a class="toggle-loupe">
-                <span class="on">Magnify On</span>
-                <span class="off">Magnify Off</span>
+                <span class="on">Magnify on</span>
+                <span class="off">Magnify off</span>
             </a>
         </div>
     </div>
@@ -46,5 +40,6 @@
 
     <script type="text/javascript" src="/static/js/jquery.loupe.js"></script>
     <script src="/static/js/guiders/guiders-1.1.1.js" type="text/javascript"></script>
+    <script type="text/javascript" src="/static/js/compiled/gallery.js"></script>
 
 {% endblock %}

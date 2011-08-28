@@ -24,15 +24,10 @@
         opacity: 1
       });
     });
-    header.mouseleave(function() {
+    return header.mouseleave(function() {
       return header.animate({
         opacity: header_opacity
       });
-    });
-    return $.ajax({
-      type: "GET",
-      url: "/static/js/compiled/gallery.js",
-      dataType: "script"
     });
   });
 }).call(this);
