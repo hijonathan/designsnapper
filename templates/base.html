@@ -4,48 +4,25 @@
 <html xmlns="http://www.w3.org/1999/xhtml">
     <head>
         <title>{% block title %}DesignSnapper{% endblock %}</title>
+        <link rel="stylesheet" href="http://twitter.github.com/bootstrap/assets/css/bootstrap-1.1.0.min.css">
 
         {% block head %}{% endblock %}
         
     </head>
 
-    <body {% block body_attrs %}{% endblock %}>
-        <header>
-            <div class="container clearfix">
-                <h1><a href="/">DesignSnapper</a></h1>
-                <nav>
-                    <ul>
-                        {% if user.is_authenticated %}
-                            <li class="username">Hello, {{ user.username }}</li>
-                        {% endif %}
-                        <li><a href="/">Pages</a></li>
-                        <li><a href="manage">Manage</a></li>
-                        {% if user.is_authenticated %}
-                            <li><a href="/accounts/logout">Logout</a></li>
-                        {% else %}
-                            <li><a href="/accounts/login">Login</a></li>
-                        {% endif %}
-                    </ul>
-                </nav>
-            </div>
-        </header>
-
-        <div id="content" class="clearfix">
-            {% block content %}{% endblock %}
-        </div>
-
-        <footer>
-        </footer>
+    <body>
+        {% block nav %}{% endblock %}
+        
+        {% block content %}{% endblock %}
 
         <script type="text/javascript" src="//ajax.googleapis.com/ajax/libs/jquery/1.6.2/jquery.min.js"></script>
-        <script type="text/javascript" src="/static/js/compiled/core.js"></script>
         {% block scripts %}{% endblock %}
-        
+
         <script type="text/javascript">
 
           var _gaq = _gaq || [];
-          _gaq.push(['_setAccount', 'UA-25333294-1']);
-          _gaq.push(['_setDomainName', '.vapor.se']);
+          _gaq.push(['_setAccount', 'UA-25394299-1']);
+          _gaq.push(['_setDomainName', '.chief.io']);
           _gaq.push(['_trackPageview']);
 
           (function() {

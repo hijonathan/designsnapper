@@ -1,5 +1,8 @@
 from django.conf.urls.defaults import *
 from django.contrib.auth.forms import AuthenticationForm
+from django.views.generic.simple import direct_to_template
+
+import designsnapper.views as views
 
 handler500 = 'djangotoolbox.errorviews.server_error'
 
@@ -7,8 +10,10 @@ from django.contrib import admin
 admin.autodiscover()
 
 urlpatterns = patterns('',
-    (r'^$', 'django.views.generic.simple.redirect_to', {'url': '/designsnapper/', }),
-    (r'^designsnapper/', include('designsnapper.urls')),
+    (r'^$', direct_to_template, {'template': 'marketing/index.html'}),
+    (r'^manage/$', views.ManageView.as_view()),
+    (r'^page/$', views.PageView.as_view()),
+    (r'^debug/$', views.DebugView.as_view()),
 
     (r'^accounts/create/$', 'designsnapper.views.create_new_user'),
     (r'^accounts/login/$', 'django.contrib.auth.views.login',

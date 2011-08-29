@@ -1,0 +1,32 @@
+{% extends 'base.html' %}
+
+{% block nav %}
+    <header class="topbar">
+        <div class="fill">
+            <div class="container">
+                <h3><a href="#">chief.io</a></h3>
+                <ul>
+                    <li class="active"><a href="#">Home</a></li>
+                    <li><a href="#">Platform</a></li>
+                    <li><a href="#">Demo</a></li>
+                    <li><a href="#">Pricing</a></li>
+                </ul>
+                <ul class="nav secondary-nav">
+                    <li class="menu">
+                        <a href="#" class="menu">Account</a>
+                        <ul class="menu-dropdown">
+                            <li><a href="#">Log in to Chief.io</a></li>
+                            <li><a href="#">Recover password</a></li>
+                            <li class="divider"></li>
+                            <li><a href="#">Contact sales</a></li>
+                        </ul>
+                    </li>
+                </ul>
+            </div>
+        </div> <!-- /fill -->
+    </header>
+{% endblock %}
+
+{% block scripts %}
+    <script type="text/javascript" src="/static/js/compiled/marketing.js"></script>
+{% endblock %}

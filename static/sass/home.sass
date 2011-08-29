@@ -1,39 +1,90 @@
-@import "compass/reset"
 @import "compass/css3"
 @import "compass/utilities/general/clearfix"
 
 @import "constants"
 @import "mixins"
-@import "kiss"
 
 body
     font-family: $font
-    line-height: 1.3em
 
-h1, h2, h3, h4, h5, h6, p
-    line-height: 1.3em
+#masthead
+    margin-top: 40px
+    background-color: #049cd9
+    background-repeat: no-repeat
+    background-image: -webkit-gradient(linear, left top, left bottom, from(#004D9F), to(#049cd9))
+    background-image: -webkit-linear-gradient(#004D9F, #049cd9)
+    background-image: -moz-linear-gradient(#004D9F, #049cd9)
+    background-image: -o-linear-gradient(top, #004D9F, #049cd9)
+    background-image: -khtml-gradient(linear, left top, left bottom, from(#004D9F), to(#049cd9))
+    filter: progid:DXImageTransform.Microsoft.Gradient(StartColorStr='#004D9F', EndColorStr='#049cd9', GradientType=0)
+    -ms-filter: "progid:DXImageTransform.Microsoft.gradient(startColorStr='#004D9F', EndColorStr='#049cd9', GradientType=0))"
 
-h1
-    font-size: 42px
-    font-weight: bold
-    +text-shadow(#ccc 2px 2px)
+    div
+        &.inner
+            background: transparent url(../images/grid-18px.png) top center
+            padding: 45px 0
+            +box-shadow(inset 0 10px 30px rgba(0, 0, 0, 0.3))
 
-h2
-    font-size: 18px
-    margin-bottom: 20px
-    color: #444
-    +single-text-shadow(#ccc)
+    h1, p
+        color: #fff
+        text-shadow: 0 1px 1px rgba(0,0,0,.3)
+        text-align: center
+        margin-bottom: 9px
 
-section
-    width: 800px
-    margin: 10% auto 0
-    text-align: center
+    p
+        font-weight: 300
+        
+        &.lead
+            font-size: 20px
+            line-height: 27px
 
-input
-    width: 400px
-    height: 20px
-    padding: 4px 6px
-    font-size: 16px
-    border: none
-    border: 1px solid #ccc
-    
+        a
+            color: #fff
+            font-weight: bold
+
+    h1 
+        font-size: 54px
+        line-height: 1
+        text-shadow: 0 1px 2px rgba(0,0,0,.5)
+
+div.quickstart 
+    background-color: #f5f5f5
+    background-repeat: repeat-x
+    +background-image(linear, left top, left bottom, color-stop(0%, #f9f9f9), color-stop(100%, #f5f5f5))
+    border-top: 1px solid #fff
+    border-bottom: 1px solid #eee
+
+    div.row 
+        margin: 0 -20px
+        +single-box-shadow(1px 0 0 #f9f9f9)
+
+    div.columns
+        width: 285px
+        height: 117px
+        margin-left: 0
+        padding: 17px 20px 26px
+        border-left: 1px solid #eee
+        +single-box-shadow(1px 0 0 #f9f9f9)
+
+        &:last-child
+            border-right: 1px solid #eee
+            width: 286px
+
+    h6, p
+        line-height: 18px
+        text-align: center
+        margin-bottom: 9px
+        color: #333
+
+    h6
+        color: #999
+
+    form
+        textarea 
+            display: block
+            width: 275px
+            height: auto
+            margin: 0 0 9px
+            line-height: 21px
+            white-space: nowrap
+            overflow: hidden

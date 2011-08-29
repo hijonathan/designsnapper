@@ -38,7 +38,7 @@ class DebugView(View):
         context = RequestContext(request)
         context['request'] = request
 
-        return render_to_response('debug.html', context, mimetype="application/json")
+        return render_to_response('app/debug.html', context, mimetype="application/json")
 
 
 class HomeView(View):
@@ -49,7 +49,7 @@ class HomeView(View):
         context = RequestContext(request)
         
         snapshots = range(10)
-        return render_to_response('index.html', {'snapshots': snapshots,}, context)
+        return render_to_response('marketing/index.html', {'snapshots': snapshots,}, context)
 
 
 class ManageView(View):
@@ -58,10 +58,10 @@ class ManageView(View):
     @client
     def get(self, request):
         pages = get_all_pages(0001)
-        soup = BeautifulSoup(urllib2.urlopen('http://www.turningart.com'))
-        titles = [soup.html.head.title]
+        for page in pages:
+            page['title'] = BeautifulSoup(urllib2.urlopen(page.get('url'))).html.head.title.string
 
-        return render_to_response('manage.html', {'pages': pages, 'titles': titles})
+        return render_to_response('app/manage.html', {'pages': pages})
 
 
 class PageView(View):
@@ -88,7 +88,7 @@ class PageView(View):
         #     'screenshots': screenshots
         # }
 
-        return render_to_response('page.html', {'page': page, 'screenshot_count': screenshot_count}, context)
+        return render_to_response('app/page.html', {'page': page, 'screenshot_count': screenshot_count}, context)
 
 
 def create_new_user(request):
@@ -102,7 +102,7 @@ def create_new_user(request):
             return HttpResponseRedirect('/designsnapper/')
     else:
         form = UserCreationForm()
-    return direct_to_template(request, 'user_create_form.html',
+    return direct_to_template(request, 'app/user_create_form.html',
         {'form': form})
 
 @client
