@@ -1,38 +1,48 @@
-{% extends 'base.html' %}
+{% extends 'app.html' %}
 
 {% block head %}
-
+    {{ block.super }}
     <link href="/static/css/gallery.css" media="screen, projection" rel="stylesheet" type="text/css" />
-
-    <script type="text/javascript">
-        window.screenshotCount = {{ screenshot_count }}
-    </script>
 {% endblock %}
 
 {% block content %}
 
-    <div class="header">
-        <h2>Profile of {{ page.name }}</h2>
-        <div class="links">
-            <a class="tile-pages">
-                <span class="on">Full screen</span>
-                <span class="off">Tile all</span>
-            </a>
-            <a class="toggle-loupe">
-                <span class="on">Magnify on</span>
-                <span class="off">Magnify off</span>
-            </a>
-        </div>
-    </div>
+    <div class="container">
+        <section class="content">
+            <div class="row">
+                <div class="span10">
+                    <h2>Profile of {{ page.name }}</h2>
+                </div>
+                <div class="span6 util-links">
+                    {% spaceless %}
+                    <a class="tile-pages">
+                        <span class="on">Full screen</span>
+                        <span class="off">Tile all</span>
+                    </a>
+                    <a class="toggle-loupe">
+                        <span class="on">Magnify on</span>
+                        <span class="off">Magnify off</span>
+                    </a>
+                    {% endspaceless %}
+                </div>
+            </div>
 
-    <article class="page-gallery container clearfix">
-        {% for version in page.versions %}
-            <section class="page {% if forloop.last %}last{% endif %}">
-                <h4>Taken on {{ version.date }}</h4>
-                <img src="{{ version.screenshot.path }}" />
+            <section class="page-gallery clearfix">
+                <div class="row">
+                    {% for version in page.versions %}
+                        <div class="page {% if forloop.last %}last{% endif %}">
+                            <h4>Taken on {{ version.date }}</h4>
+                            <img src="{{ version.screenshot.path }}" />
+                        </div>
+                        {% if forloop.counter|divisibleby:3 %}
+                </div>
+                <div class="row">
+                        {% endif %}
+                    {% endfor %}
+                </div>
             </section>
-        {% endfor %}
-    </article>
+        </section>
+    </div>
     
 {% endblock %}
 

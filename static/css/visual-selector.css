@@ -138,91 +138,9 @@
   left: -42px;
 }
 
-/* line 5, ../sass/gallery.sass */
-.gallery .snapshot {
-  float: left;
-  width: 30%;
-  margin-bottom: 45px;
-}
-/* line 10, ../sass/gallery.sass */
-.gallery .snapshot.middle {
-  padding: 0 5%;
-}
-/* line 13, ../sass/gallery.sass */
-.gallery .snapshot img {
-  border: 1px solid #cccccc;
-  margin-bottom: 10px;
-}
-/* line 17, ../sass/gallery.sass */
-.gallery .snapshot .links {
-  display: block;
-}
-/* line 20, ../sass/gallery.sass */
-.gallery .snapshot .links .details {
-  float: left;
-}
-/* line 22, ../sass/gallery.sass */
-.gallery .snapshot .links .url {
-  float: right;
-}
-
-/* line 25, ../sass/gallery.sass */
-.util-links {
-  text-align: right;
-}
-/* line 28, ../sass/gallery.sass */
-.util-links a {
-  margin-left: 10px;
-  cursor: pointer;
-}
-/* line 34, ../sass/gallery.sass */
-.util-links span.off {
-  display: none;
-}
-
-/* line 39, ../sass/gallery.sass */
-#content.full .header {
-  position: fixed;
-}
-/* line 42, ../sass/gallery.sass */
-#content.full article {
-  margin-top: 60px;
-}
-
-/* line 46, ../sass/gallery.sass */
-.page-gallery {
-  margin-top: 15px;
-}
-/* line 50, ../sass/gallery.sass */
-.page-gallery .row .page {
-  float: left;
-  margin-left: 20px;
-  margin-bottom: 20px;
-}
-/* line 55, ../sass/gallery.sass */
-.page-gallery .row .page:first-child {
-  margin-left: 0;
-}
-/* line 58, ../sass/gallery.sass */
-.page-gallery .row .page img {
-  border: 1px solid #cccccc;
-  -moz-box-shadow: 2px 2px 5px #cccccc;
-  -webkit-box-shadow: 2px 2px 5px #cccccc;
-  -o-box-shadow: 2px 2px 5px #cccccc;
-  box-shadow: 2px 2px 5px #cccccc;
-  width: 298px;
-}
-
-/* line 63, ../sass/gallery.sass */
-.loupe {
-  border: 1px solid #222222;
-  -moz-box-shadow: 0px 0px 5px #333333;
-  -webkit-box-shadow: 0px 0px 5px #333333;
-  -o-box-shadow: 0px 0px 5px #333333;
-  box-shadow: 0px 0px 5px #333333;
-}
-/* line 67, ../sass/gallery.sass */
-.loupe.page {
-  float: left;
-  margin-right: 40px;
+/* line 5, ../sass/visual-selector.sass */
+#visual-selector iframe {
+  border: 1px solid #ececec;
+  width: 100%;
+  height: 600px;
 }

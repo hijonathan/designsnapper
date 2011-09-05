@@ -1,10 +1,8 @@
 (function() {
   $(function() {
-    var hashTag, page, pageImg, url, windowHeight, windowWidth;
+    var hashTag, page, pageImg, url;
     url = window.location.href;
     hashTag = url.substr(url.indexOf('#'));
-    windowWidth = window.innerWidth - 20;
-    windowHeight = window.innerHeight;
     page = $('.page-gallery .page');
     pageImg = $('.page-gallery .page img');
     $('.toggle-loupe').click(function() {
@@ -20,32 +18,21 @@
     });
     $('.tile-pages').click(function() {
       $('.tile-pages span').toggle();
-      if (!$('#content').hasClass('full')) {
+      if (!$('.page-gallery').hasClass('full')) {
         page.fadeOut(function() {
-          var imgWidth;
           pageImg.css({
-            width: 'auto',
-            height: windowHeight - 230
+            width: 958
           });
-          imgWidth = $('.page-gallery .page').first().width();
-          $('.page-gallery').css({
-            width: screenshotCount * (imgWidth + 40) - 40
-          });
-          return $('#content').addClass('full');
+          return $('.page-gallery').addClass('full');
         }).fadeIn();
       } else {
-        console.log('executing else statement');
-        page.fadeOut();
-        $('.page-gallery').animate({
-          width: windowWidth - 40
-        }, function() {
+        page.fadeOut(function() {
           pageImg.css({
-            height: 'auto',
-            width: 250
+            width: 298
           });
+          $('.page-gallery').removeClass('full');
           return page.fadeIn();
         });
-        $('#content').removeClass('full');
       }
       return guiders.next();
     });

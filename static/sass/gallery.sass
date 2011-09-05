@@ -1,8 +1,5 @@
-@import "base"
-@import "guiders"
-
-#content
-    padding-top: 74px
+@import "compass/css3"
+@import guiders
 
 .gallery
     .snapshot
@@ -25,22 +22,17 @@
             .url
                 float: right
 
-.header
-    width: 100%
+.util-links
+    text-align: right
 
-    .links
-        float: right
-        position: relative
-        right: 20px
-        top: -30px
-        width: 400px
-        text-align: right
-        
-        span
-            margin-left: 20px
+    a
+        margin-left: 10px
+        cursor: pointer
 
-            &.off
-                display: none
+    span
+
+        &.off
+            display: none
 
 // Specific situation for tiling
 #content.full
@@ -54,18 +46,19 @@
 .page-gallery
     margin-top: 15px
 
-    section.page
-        float: left
-        margin-right: 40px
-        margin-bottom: 40px
+    .row
+        .page
+            float: left
+            margin-left: 20px
+            margin-bottom: 20px
         
-        img
-            border: 1px solid #ccc
-            +single-box-shadow(#ccc, 2px, 2px)
-            width: 250px
+            &:first-child
+                margin-left: 0
 
-        &.last
-            margin-right: 0
+            img
+                border: 1px solid #ccc
+                +single-box-shadow(#ccc, 2px, 2px)
+                width: 298px
 
 .loupe
     border: 1px solid #222

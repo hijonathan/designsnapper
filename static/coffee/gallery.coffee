@@ -2,10 +2,6 @@ $ ->
     url = window.location.href;
     hashTag = url.substr(url.indexOf('#'));
 
-    # Calulate window size to setup the default view
-    windowWidth = window.innerWidth - 20
-    windowHeight = window.innerHeight
-    
     page = $('.page-gallery .page')
     pageImg = $('.page-gallery .page img')
 
@@ -20,24 +16,19 @@ $ ->
     # Handle tiled and full-height modes
     $('.tile-pages').click ->
         $('.tile-pages span').toggle()
-        if (!$('#content').hasClass('full'))
+        if not $('.page-gallery').hasClass('full')
             page.fadeOut( ->
-                pageImg.css({ width: 'auto', height: (windowHeight - 230) })
-                
-                imgWidth = $('.page-gallery .page').first().width()
+                pageImg.css({ width: 958 })
 
-                $('.page-gallery').css({ width: screenshotCount * (imgWidth + 40) - 40 })
-                $('#content').addClass('full')
+                $('.page-gallery').addClass('full')
             ).fadeIn()
         
         else
-            console.log('executing else statement')
-            page.fadeOut()
-            $('.page-gallery').animate({ width: windowWidth - 40 }, ->
-                pageImg.css({ height: 'auto', width: 250 })
+            page.fadeOut( ->
+                pageImg.css({ width: 298 })
+                $('.page-gallery').removeClass('full')
                 page.fadeIn()
             )
-            $('#content').removeClass('full')
         guiders.next()
 
     # Enable the guided tour only if the hash exists
