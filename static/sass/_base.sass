@@ -1,12 +1,21 @@
-@import "compass/reset"
 @import "compass/css3"
 @import "compass/utilities/general/clearfix"
-@import "compass/utilities/tables/alternating-rows-and-columns"
 
-@import "constants"
-@import "mixins"
-@import "kiss"
+@import constants
+@import mixins
 
+body
+    font-family: $font
+
+.topbar h3
+    font-family: 'Amaranth'
+    font-weight: bold
 
 .clearfix
     +pie-clearfix
+
+.nav
+    list-style-type: none
+    padding: 0
+    margin: 0
+

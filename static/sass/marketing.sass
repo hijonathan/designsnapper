@@ -1,0 +1,74 @@
+@import base
+
+h1 
+    color: #fff
+    font-size: 35px
+    line-height: 1
+    margin-bottom: 0
+    text-shadow: 0 1px 2px rgba(0,0,0,.5)
+
+.hero
+    margin-top: 40px
+    background-color: #049cd9
+    background-repeat: no-repeat
+    background-image: -webkit-gradient(linear, left top, left bottom, from(#004D9F), to(#049cd9))
+    background-image: -webkit-linear-gradient(#004D9F, #049cd9)
+    background-image: -moz-linear-gradient(#004D9F, #049cd9)
+    background-image: -o-linear-gradient(top, #004D9F, #049cd9)
+    background-image: -khtml-gradient(linear, left top, left bottom, from(#004D9F), to(#049cd9))
+    filter: progid:DXImageTransform.Microsoft.Gradient(StartColorStr='#004D9F', EndColorStr='#049cd9', GradientType=0)
+    -ms-filter: "progid:DXImageTransform.Microsoft.gradient(startColorStr='#004D9F', EndColorStr='#049cd9', GradientType=0))"
+
+    div
+        &.inner
+            background: transparent url(../images/grid-18px.png) top center
+            padding: 30px 0 10px
+            +box-shadow(inset 0 10px 30px rgba(0, 0, 0, 0.3))
+
+.sidebar
+    border-right: 1px dotted #eee
+    padding-top: 20px
+    
+    ul.mini-nav
+        @extend .nav
+        
+        li
+            font-size: 14px
+            border-top: 1px dotted #eee
+        
+            &:first-child
+                border-top: none
+
+            a
+                display: block
+                padding: 4px 20px
+                color: #777
+                +single-transition(background-color .2s ease-in)
+                
+                &:hover
+                    color: #000
+                    background-color: #eff7fc
+                    text-decoration: none
+
+    hr
+        border-bottom: 1px dotted #eee
+    
+    p
+        padding-right: 20px
+
+.content
+    padding-top: 20px
+
+.footer-nav
+    @extend .nav
+    float: left
+    
+    li
+        float: left
+        margin-right: 20px
+
+        a
+            color: #bbb
+            
+            &:hover
+                color: $linkColorHover

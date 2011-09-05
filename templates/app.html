@@ -1,1 +1,32 @@
 {% extends 'base.html' %}
+
+{% block head %}
+    <link href="/static/css/app.css" media="screen, projection" rel="stylesheet" type="text/css" />
+{% endblock %}
+
+{% block nav %}
+    <header class="topbar">
+        <div class="fill">
+            <div class="container">
+                <h3><a href="/">chief.io</a></h3>
+                <ul>
+                    <li class="active"><a href="/dashboard/">Dashboard</a></li>
+                    <li><a href="/manage/">Manage</a></li>
+                </ul>
+                <ul class="nav secondary-nav">
+                    <li><a href="/settings/">Account Settings</a></li>
+                    <li><a href="/logout/">Log out</a></li>
+                </ul>
+            </div>
+        </div> <!-- /fill -->
+    </header>
+{% endblock %}
+
+{% block footer %}
+    <footer>
+        <div class="container">
+            <p>Copyright | chief.io Inc. | v0.1</p>
+        </div>
+    </footer>
+            
+{% endblock %}

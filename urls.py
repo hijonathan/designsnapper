@@ -10,7 +10,7 @@ from django.contrib import admin
 admin.autodiscover()
 
 urlpatterns = patterns('',
-    (r'^$', direct_to_template, {'template': 'marketing/index.html'}),
+    (r'^', include('designsnapper.urls')),
     (r'^manage/$', views.ManageView.as_view()),
     (r'^page/$', views.PageView.as_view()),
     (r'^debug/$', views.DebugView.as_view()),

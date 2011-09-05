@@ -41,17 +41,6 @@ class DebugView(View):
         return render_to_response('app/debug.html', context, mimetype="application/json")
 
 
-class HomeView(View):
-    """Render the home page."""
-
-    @client
-    def get(self, request):
-        context = RequestContext(request)
-        
-        snapshots = range(10)
-        return render_to_response('marketing/index.html', {'snapshots': snapshots,}, context)
-
-
 class ManageView(View):
     """Handles displaying/adding/removing pages you're monitoring."""
 

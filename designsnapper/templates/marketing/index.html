@@ -1,59 +1,60 @@
 {% extends 'marketing.html' %}
 
 {% block head %}
+    {{ block.super }}
     <link href="/static/css/home.css" media="screen, projection" rel="stylesheet" type="text/css" />
 {% endblock %}
 
 {% block content %}
 
-        <div id="masthead">
-            <div class="inner">
-                <div class="container">
-                    <h1>Your virtual informant</h1>
-                    <p class="lead">
-                        Keep up-to-date on your competition in the time it takes to read an email. Chief.io is your personalized assistant for gathering competitive intelligence on any online company.
+    <div id="masthead">
+        <div class="inner">
+            <div class="container">
+                <h1>Enterprise Competitive Monitoring</h1>
+                <p class="lead">
+                    Keep up-to-date on your competition in the time it takes to read an email. Chief.io is your personalized assistant for gathering competitive intelligence on any online company.
+                </p>
+                <p>
+                    <strong>Who's it for?</strong> Hundreds of online companies are already using chief.io. <a href="pricing">See if you qualify</a> for an account.
+                </p>
+            </div> <!-- /container -->
+        </div>
+    </div>
+
+    <div class="quickstart">
+        <div class="container">
+            <div class="row">
+                <div class="span5 columns">
+                    <h6>Effortless research</h6>
+                    <p>
+                        Gain access to our database of thousands of historical changes to your competitors' pricing, marketing and products.
+                    </p>
+                </div>
+                <div class="span5 columns">
+                    <h6>Only the important stuff</h6>
+                    <p>
+                        Chief.io filters out small changes and only notifies you of the major things you want to know about.
+                    </p>
+                </div>
+                <div class="span5 columns">
+                    <h6>Get started today</h6>
+                    <p>
+                        Test drive the Chief.io platform today to see if it's the right fit for your business.
                     </p>
                     <p>
-                        <strong>Who's it for?</strong> Hundreds of online companies are already using chief.io. <a href="pricing">See if you qualify</a> for an account.
+                        <a href="platform" class="btn primary">Demo the platform &raquo;</a>
                     </p>
-                </div> <!-- /container -->
-            </div>
-        </div>
-
-        <div class="quickstart">
-            <div class="container">
-                <div class="row">
-                    <div class="span5 columns">
-                        <h6>Effortless research</h6>
-                        <p>
-                            Gain access to our database of thousands of historical changes to your competitors' pricing, marketing and products.
-                        </p>
-                    </div>
-                    <div class="span5 columns">
-                        <h6>Only the important stuff</h6>
-                        <p>
-                            Chief.io filters out small changes and only notifies you of the major things you want to know about.
-                        </p>
-                    </div>
-                    <div class="span5 columns">
-                        <h6>Get started today</h6>
-                        <p>
-                            Test drive the Chief.io platform today to see if it's the right fit for your business.
-                        </p>
-                        <p>
-                            <a href="platform" class="btn primary">Demo the platform &raquo;</a>
-                        </p>
-                    </div>
-                </div> <!-- /row -->
-            </div>
-        </div>
-
-        <div class="logos">
-            <div class="container">
-                <div class="row">
-                    <img src="/static/images/logos.png" />
                 </div>
+            </div> <!-- /row -->
+        </div>
+    </div>
+
+    <div class="logos">
+        <div class="container">
+            <div class="row">
+                <img src="/static/images/logos.png" />
             </div>
         </div>
+    </div>
 
 {% endblock %}

@@ -7,7 +7,7 @@ import designsnapper.views as views
 
 urlpatterns = patterns('',
     (r'^$', direct_to_template, {'template': 'marketing/index.html'}),
-    (r'manage', views.ManageView.as_view()),
-    (r'page', views.PageView.as_view()),
-    (r'debug', views.DebugView.as_view())
+    (r'^platform/$', direct_to_template, {'template': 'marketing/platform.html'}),
+    (r'^demo/$', direct_to_template, {'template': 'marketing/platform.html'}),
+    (r'^pricing/$', direct_to_template, {'template': 'marketing/platform.html'})
 )

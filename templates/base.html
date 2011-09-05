@@ -4,6 +4,7 @@
 <html xmlns="http://www.w3.org/1999/xhtml">
     <head>
         <title>{% block title %}DesignSnapper{% endblock %}</title>
+        <link href='http://fonts.googleapis.com/css?family=Puritan:400,700,400italic|Amaranth' rel='stylesheet' type='text/css'>
         <link rel="stylesheet" href="http://twitter.github.com/bootstrap/assets/css/bootstrap-1.1.0.min.css">
 
         {% block head %}{% endblock %}
@@ -14,6 +15,8 @@
         {% block nav %}{% endblock %}
         
         {% block content %}{% endblock %}
+
+        {% block footer %}{% endblock %}
 
         <script type="text/javascript" src="//ajax.googleapis.com/ajax/libs/jquery/1.6.2/jquery.min.js"></script>
         {% block scripts %}{% endblock %}
