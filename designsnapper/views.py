@@ -41,6 +41,15 @@ class DebugView(View):
         return render_to_response('app/debug.html', context, mimetype="application/json")
 
 
+class DashboardView(View):
+    """Your basic customer-facing dashboard."""
+
+    @client
+    def get(self, request):
+
+        return render_to_response('app/dashboard.html', {})
+
+
 class ManageView(View):
     """Handles displaying/adding/removing pages you're monitoring."""
 
@@ -64,20 +73,42 @@ class PageView(View):
         screenshots = range(10)
         screenshot_count = len(screenshots)
         guid = request.GET.get('url')
-        # guid = 'apple'
 
         page = get_page_versions(guid)
 
-        # page = {
-        #     'url': url,
-        #     'name': clean_url,
-        #     'date': 'August 9, 2011',
-        #     'guid': 'abcdefg',
-        #     'status': random.randint(0,1),
-        #     'screenshots': screenshots
-        # }
-
         return render_to_response('app/page.html', {'page': page, 'screenshot_count': screenshot_count}, context)
+
+
+class AddPageView(View):
+    """Add a page or asset to monitor"""
+
+    @client
+    def get(self, request):
+
+        context = RequestContext(request)
+        url = request.GET.get('url')
+
+        return render_to_response('app/add.html', {'url': url}, context)
+
+
+class FramedContentView(View):
+    
+    def get(self, request):
+
+        url = urlparse(request.GET.get('url'))
+        
+        if url.scheme == '':
+            scheme = 'http'
+        else:
+            scheme = url.scheme
+        
+        clean_url = "%s://%s%s" % (scheme, url.netloc, url.path)
+        
+        soup = BeautifulSoup(urllib2.urlopen(clean_url))
+        soup.html.head.insert(0,'<base href="%s">' % clean_url)
+        frame_html = str(soup)
+
+        return render_to_response('app/example-framed-content.html', {'frame_html': frame_html})
 
 
 def create_new_user(request):

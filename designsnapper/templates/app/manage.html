@@ -27,12 +27,24 @@
                                     <td class="status-true">Perfect</td>
                                 {% endif %}
                                 <td>{{ page.guid }}</td>
-                                <td><a href="page">View</a> | <a href="#">Delete</a></td>
+                                <td><a href="/page?url={{ page.guid }}">View</a> | <a href="#">Delete</a></td>
                             </tr>
                         {% endfor %}
+                        <tr>
+                            <td></td>
+                            <td>
+                                <form class="add-page" action="" method="post">
+                                    <input type="text" name="add-page" placeholder="http://www.trackme.com/page/">
+                                </form>
+                            </td>
+                            <td></td>
+                            <td></td>
+                            <td></td>
+                            <td></td>
+                        </tr>
                     </table>
                 </section>
-    
+
                 <aside class="span4">
                     <h3>Manage Your Pages</h3>
                     <p>

@@ -28,6 +28,15 @@ body {
 }
 
 /* line 3, ../sass/app.sass */
-.content {
+.content, .sidebar {
   margin-top: 60px;
+}
+
+/* line 6, ../sass/app.sass */
+form {
+  margin-bottom: 0;
+}
+/* line 12, ../sass/app.sass */
+form.add-page input {
+  width: 100%;
 }
