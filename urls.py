@@ -4,8 +4,6 @@ from django.views.generic.simple import direct_to_template
 
 import designsnapper.views as views
 
-handler500 = 'djangotoolbox.errorviews.server_error'
-
 from django.contrib import admin
 admin.autodiscover()
 
