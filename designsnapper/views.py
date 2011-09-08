@@ -91,24 +91,45 @@ class AddPageView(View):
         return render_to_response('app/add.html', {'url': url}, context)
 
 
+class DemoAddPageView(View):
+    """Add a page or asset to monitor"""
+
+    def get(self, request):
+
+        context = RequestContext(request)
+        url = request.GET.get('url')
+
+        show_selector = True
+
+        if url is None:
+            show_selector = False
+
+        return render_to_response('marketing/demo.html', {'url': url, 'show_selector': show_selector}, context)
+
+
 class FramedContentView(View):
     
     def get(self, request):
 
-        url = urlparse(request.GET.get('url'))
-        
-        if url.scheme == '':
-            scheme = 'http'
-        else:
-            scheme = url.scheme
-        
-        clean_url = "%s://%s%s" % (scheme, url.netloc, url.path)
-        
-        soup = BeautifulSoup(urllib2.urlopen(clean_url))
-        soup.html.head.insert(0,'<base href="%s">' % clean_url)
-        frame_html = str(soup)
+        if str(request.GET.get('url')) != 'None':
+            
+            url = urlparse(request.GET.get('url'))
 
-        return render_to_response('app/example-framed-content.html', {'frame_html': frame_html})
+            if url.scheme == '':
+                scheme = 'http'
+            else:
+                scheme = url.scheme
+
+            clean_url = "%s://%s%s" % (scheme, url.netloc, url.path)
+
+            soup = BeautifulSoup(urllib2.urlopen(clean_url))
+            soup.html.head.insert(0,'<base href="%s">' % clean_url)
+            frame_html = str(soup)
+
+            return render_to_response('app/example-framed-content.html', {'frame_html': frame_html})
+
+        else:
+            return render_to_response('app/framed-content-help.html')
 
 
 def create_new_user(request):

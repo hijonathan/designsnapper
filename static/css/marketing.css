@@ -1,33 +1,107 @@
-/* line 7, /Users/jonathankim/Sites/snapper/static/sass/_base.sass */
+/* line 7, ../sass/_base.sass */
+html {
+  overflow-y: auto;
+}
+
+/* line 10, ../sass/_base.sass */
 body {
   font-family: "Puritan", "Helvetica Neue", Helvetica, sans-serif;
 }
 
-/* line 10, /Users/jonathankim/Sites/snapper/static/sass/_base.sass */
+/* line 13, ../sass/_base.sass */
 .topbar h3 {
   font-family: "Amaranth";
   font-weight: bold;
 }
 
-/* line 14, /Users/jonathankim/Sites/snapper/static/sass/_base.sass */
+/* line 17, ../sass/_base.sass */
 .clearfix {
   *zoom: 1;
 }
-/* line 38, /Library/Ruby/Gems/1.8/gems/compass-0.11.5/frameworks/compass/stylesheets/compass/utilities/general/_clearfix.scss */
+/* line 38, ../../../../../../Library/Ruby/Gems/1.8/gems/compass-0.11.5/frameworks/compass/stylesheets/compass/utilities/general/_clearfix.scss */
 .clearfix:after {
   content: "";
   display: table;
   clear: both;
 }
 
-/* line 17, /Users/jonathankim/Sites/snapper/static/sass/_base.sass */
+/* line 20, ../sass/_base.sass */
 .nav, .sidebar ul.mini-nav, .footer-nav {
   list-style-type: none;
   padding: 0;
   margin: 0;
 }
 
-/* line 3, ../sass/marketing.sass */
+/* Setting main nav styles based on body attribute */
+/* line 6, ../sass/marketing.sass */
+body.home .topbar ul li.home a {
+  background-color: #222222;
+  background-color: rgba(0, 0, 0, 0.5);
+}
+
+/* line 6, ../sass/marketing.sass */
+body.platform .topbar ul li.platform a {
+  background-color: #222222;
+  background-color: rgba(0, 0, 0, 0.5);
+}
+
+/* line 6, ../sass/marketing.sass */
+body.demo .topbar ul li.demo a {
+  background-color: #222222;
+  background-color: rgba(0, 0, 0, 0.5);
+}
+
+/* line 6, ../sass/marketing.sass */
+body.pricing .topbar ul li.pricing a {
+  background-color: #222222;
+  background-color: rgba(0, 0, 0, 0.5);
+}
+
+/* Platform has a subnav, so we need to accommodate */
+/* line 13, ../sass/marketing.sass */
+body#platform .mini-nav li.platform a {
+  color: black;
+  background-color: #eff7fc;
+  text-decoration: none;
+}
+
+/* line 13, ../sass/marketing.sass */
+body#platform-algorithms .mini-nav li.platform-algorithms a {
+  color: black;
+  background-color: #eff7fc;
+  text-decoration: none;
+}
+
+/* line 13, ../sass/marketing.sass */
+body#platform-analysis .mini-nav li.platform-analysis a {
+  color: black;
+  background-color: #eff7fc;
+  text-decoration: none;
+}
+
+/* line 13, ../sass/marketing.sass */
+body#platform-notifications .mini-nav li.platform-notifications a {
+  color: black;
+  background-color: #eff7fc;
+  text-decoration: none;
+}
+
+/* line 13, ../sass/marketing.sass */
+body#platform-details .mini-nav li.platform-details a {
+  color: black;
+  background-color: #eff7fc;
+  text-decoration: none;
+}
+
+/* line 18, ../sass/marketing.sass */
+body.demo .topbar .container, body.demo footer .container {
+  padding: 0 20px;
+  zoom: 1;
+  margin: 0;
+  width: auto;
+}
+
+/* line 24, ../sass/marketing.sass */
 h1 {
   color: white;
   font-size: 35px;
@@ -36,7 +110,13 @@ h1 {
   text-shadow: 0 1px 2px rgba(0, 0, 0, 0.5);
 }
 
-/* line 10, ../sass/marketing.sass */
+/* line 31, ../sass/marketing.sass */
+.demo-wrapper {
+  /* Padding for pages that show the app */
+  margin-top: 40px;
+}
+
+/* line 35, ../sass/marketing.sass */
 .hero {
   margin-top: 40px;
   background-color: #049cd9;
@@ -49,7 +129,7 @@ h1 {
   filter: progid:DXImageTransform.Microsoft.Gradient(StartColorStr='#004D9F', EndColorStr='#049cd9', GradientType=0);
   -ms-filter: "progid:DXImageTransform.Microsoft.gradient(startColorStr='#004D9F', EndColorStr='#049cd9', GradientType=0))";
 }
-/* line 23, ../sass/marketing.sass */
+/* line 48, ../sass/marketing.sass */
 .hero div.inner {
   background: transparent url(../images/grid-18px.png) top center;
   padding: 30px 0 10px;
@@ -59,21 +139,21 @@ h1 {
   box-shadow: inset 0 10px 30px rgba(0, 0, 0, 0.3);
 }
 
-/* line 28, ../sass/marketing.sass */
+/* line 53, ../sass/marketing.sass */
 .sidebar {
   border-right: 1px dotted #eeeeee;
   padding-top: 20px;
 }
-/* line 35, ../sass/marketing.sass */
+/* line 60, ../sass/marketing.sass */
 .sidebar ul.mini-nav li {
   font-size: 14px;
   border-top: 1px dotted #eeeeee;
 }
-/* line 39, ../sass/marketing.sass */
+/* line 64, ../sass/marketing.sass */
 .sidebar ul.mini-nav li:first-child {
   border-top: none;
 }
-/* line 42, ../sass/marketing.sass */
+/* line 67, ../sass/marketing.sass */
 .sidebar ul.mini-nav li a {
   display: block;
   padding: 4px 20px;
@@ -87,40 +167,60 @@ h1 {
   -o-transition-duration: 1s;
   transition-duration: 1s;
 }
-/* line 48, ../sass/marketing.sass */
+/* line 73, ../sass/marketing.sass */
 .sidebar ul.mini-nav li a:hover {
   color: black;
   background-color: #eff7fc;
   text-decoration: none;
 }
-/* line 53, ../sass/marketing.sass */
+/* line 78, ../sass/marketing.sass */
 .sidebar hr {
   border-bottom: 1px dotted #eeeeee;
 }
-/* line 56, ../sass/marketing.sass */
+/* line 81, ../sass/marketing.sass */
 .sidebar p {
   padding-right: 20px;
 }
 
-/* line 59, ../sass/marketing.sass */
+/* line 84, ../sass/marketing.sass */
 .content {
   padding-top: 20px;
 }
 
-/* line 62, ../sass/marketing.sass */
+/* line 87, ../sass/marketing.sass */
+.demo-searchbox {
+  width: 500px;
+  margin: 10% auto 0;
+}
+/* line 91, ../sass/marketing.sass */
+.demo-searchbox h2 {
+  text-align: center;
+  margin-bottom: 15px;
+}
+/* line 95, ../sass/marketing.sass */
+.demo-searchbox form {
+  text-align: center;
+}
+/* line 98, ../sass/marketing.sass */
+.demo-searchbox .xlarge {
+  width: 350px;
+  margin: 0 auto;
+}
+
+/* line 102, ../sass/marketing.sass */
 .footer-nav {
   float: left;
 }
-/* line 66, ../sass/marketing.sass */
+/* line 106, ../sass/marketing.sass */
 .footer-nav li {
   float: left;
   margin-right: 20px;
 }
-/* line 70, ../sass/marketing.sass */
+/* line 110, ../sass/marketing.sass */
 .footer-nav li a {
   color: #bbbbbb;
 }
-/* line 73, ../sass/marketing.sass */
+/* line 113, ../sass/marketing.sass */
 .footer-nav li a:hover {
   color: #0050a3;
 }

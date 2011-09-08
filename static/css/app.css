@@ -1,26 +1,31 @@
-/* line 7, ../sass/_base.sass */
+/* line 7, /Users/jonathankim/Sites/snapper/static/sass/_base.sass */
+html {
+  overflow-y: auto;
+}
+
+/* line 10, /Users/jonathankim/Sites/snapper/static/sass/_base.sass */
 body {
   font-family: "Puritan", "Helvetica Neue", Helvetica, sans-serif;
 }
 
-/* line 10, ../sass/_base.sass */
+/* line 13, /Users/jonathankim/Sites/snapper/static/sass/_base.sass */
 .topbar h3 {
   font-family: "Amaranth";
   font-weight: bold;
 }
 
-/* line 14, ../sass/_base.sass */
+/* line 17, /Users/jonathankim/Sites/snapper/static/sass/_base.sass */
 .clearfix {
   *zoom: 1;
 }
-/* line 38, ../../../../../../Library/Ruby/Gems/1.8/gems/compass-0.11.5/frameworks/compass/stylesheets/compass/utilities/general/_clearfix.scss */
+/* line 38, /Library/Ruby/Gems/1.8/gems/compass-0.11.5/frameworks/compass/stylesheets/compass/utilities/general/_clearfix.scss */
 .clearfix:after {
   content: "";
   display: table;
   clear: both;
 }
 
-/* line 17, ../sass/_base.sass */
+/* line 20, /Users/jonathankim/Sites/snapper/static/sass/_base.sass */
 .nav {
   list-style-type: none;
   padding: 0;

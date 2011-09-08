@@ -1,7 +1,7 @@
 (function() {
   $(function() {
     var iframe;
-    iframe = jQuery('<iframe width="100%" height="100%"></iframe>');
+    iframe = jQuery('<iframe width="100%" height="99%"></iframe>');
     console.log(iframe);
     iframe.load(function() {
       var script;

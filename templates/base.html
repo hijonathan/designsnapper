@@ -5,20 +5,20 @@
     <head>
         <title>{% block title %}Enterprise Competitive Monitoring | Chief.io{% endblock %}</title>
         <link href='http://fonts.googleapis.com/css?family=Puritan:400,700,400italic|Amaranth' rel='stylesheet' type='text/css'>
-        <link rel="stylesheet" href="http://twitter.github.com/bootstrap/assets/css/bootstrap-1.1.0.min.css">
+        <link rel="stylesheet" href="/static/css/bootstrap-1.2.0.min.css">
 
         {% block head %}{% endblock %}
         
     </head>
 
-    <body {% block body_attributes %}{% endblock %}>
+    <body {% spaceless %}{% block body_attributes %}{% endblock %}{% endspaceless %}>
         {% block nav %}{% endblock %}
         
         {% block content %}{% endblock %}
 
         {% block footer %}{% endblock %}
 
-        <script type="text/javascript" src="//ajax.googleapis.com/ajax/libs/jquery/1.6.2/jquery.min.js"></script>
+        <script type="text/javascript" src="/static/js/compiled/jquery-1.6.2.min.js"></script>
         {% block scripts %}{% endblock %}
 
         <script type="text/javascript">

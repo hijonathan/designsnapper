@@ -1,0 +1,55 @@
+{% extends 'marketing.html' %}
+
+{% block head %}
+
+    {{ block.super }}
+    <link href="/static/css/visual-selector.css" media="screen, projection" rel="stylesheet" type="text/css" />
+    <script type="text/javascript">
+        window.page_url = "{{ url }}"
+    </script>
+
+{% endblock %}
+
+{% block body_attributes %}
+    class="demo"
+{% endblock %}
+
+{% block content %}
+
+    <section class="demo-wrapper">
+        <div class="container-fluid">
+
+            <div class="sidebar">
+                <h3>Choose what to track</h3>
+                <p>Venison jowl rump, shankle pig chicken pork short loin ham hock tongue. Pig pork kielbasa, tail ham hock meatball short ribs chicken drumstick sirloin tenderloin. Salami pancetta flank frankfurter hamburger chicken cow, beef pork chop pig drumstick spare ribs turkey. Pastrami turducken andouille pork chop, short ribs shoulder leberkäse corned beef rump boudin drumstick pig jowl ribeye tenderloin. Turducken cow bacon, pork sausage chicken pastrami flank kielbasa swine drumstick andouille jowl corned beef meatloaf. Tongue andouille prosciutto, drumstick sirloin pork belly hamburger bacon jowl. Beef ribs brisket sausage boudin filet mignon short ribs.</p>
+            </div>
+
+            <div class="content">
+            
+                {% if show_selector %}
+
+                    <div id="visual-selector"></div>
+
+                {% else %}
+                    <section class="demo-searchbox">
+                        <h2>What page would you like us to analyze?</h2>
+                        <form class="form" method="get">
+                            <input type="text" class="xlarge" name="url" />
+                            <span class="help-block"><strong>Need an example?</strong> <a href="/demo/?url=https://www.compete.com/plans/">Analyze <strong>one</strong> of our competitors.</a></span>
+                        </form>
+                    </section>
+                {% endif %}
+            
+            </div>
+
+        </div>
+    </section>
+
+{% endblock %}
+
+{% block scripts %}
+    {{ block.super }}
+    {% if show_selector %}
+        <script src="/static/js/compiled/visual-selector.js" type="text/javascript"></script>
+    {% endif %}
+{% endblock %}

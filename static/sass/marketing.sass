@@ -1,11 +1,36 @@
 @import base
 
+/* Setting main nav styles based on body attribute
+@each $item in home, platform, demo, pricing
+    body.#{$item}
+        .topbar ul li.#{$item} a
+            background-color: #222
+            background-color: rgba(0, 0, 0, 0.5)
+
+/* Platform has a subnav, so we need to accommodate
+@each $item in platform, platform-algorithms, platform-analysis, platform-notifications, platform-details
+    body##{$item}
+        .mini-nav li.#{$item} a
+            color: #000
+            background-color: #eff7fc
+            text-decoration: none
+
+body.demo .topbar .container, body.demo footer .container
+    padding: 0 20px
+    zoom: 1
+    margin: 0
+    width: auto
+
 h1 
     color: #fff
     font-size: 35px
     line-height: 1
     margin-bottom: 0
     text-shadow: 0 1px 2px rgba(0,0,0,.5)
+
+.demo-wrapper
+    /* Padding for pages that show the app
+    margin-top: 40px
 
 .hero
     margin-top: 40px
@@ -58,6 +83,21 @@ h1
 
 .content
     padding-top: 20px
+
+.demo-searchbox
+    width: 500px
+    margin: 10% auto 0
+
+    h2
+        text-align: center
+        margin-bottom: 15px
+
+    form
+        text-align: center
+
+    .xlarge
+        width: 350px
+        margin: 0 auto
 
 .footer-nav
     @extend .nav
