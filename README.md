@@ -16,9 +16,7 @@ Built with Django and Python. Uses Compass, Sass and CoffeeScript.
 
         easy_install pymysql
 
-OR
-
-        easy_install mysqld
+OR just download the latest from http://dev.mysql.com/downloads/mysql/
 
 #### Installing ui dependencies (OS X)
 
