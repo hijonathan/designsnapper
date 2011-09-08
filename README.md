@@ -4,7 +4,21 @@ DesignSnapper is a light-weight web app for monitoring changes to web pages over
 
 ## Technical Specs
 
-Built with Django, Python and Google AppEngine. Uses Compass, Sass and CoffeeScript.
+Built with Django and Python. Uses Compass, Sass and CoffeeScript.
+
+#### Installing project dependencies
+
+- Install BeautifulSoup
+
+        easy_install BeautifulSoup
+
+- Install mysql
+
+        easy_install pymysql
+
+OR
+
+        easy_install mysqld
 
 #### Installing ui dependencies (OS X)
 
@@ -12,8 +26,8 @@ Built with Django, Python and Google AppEngine. Uses Compass, Sass and CoffeeScr
 - Install Ruby (but you should already have it)
 - Install Sass and Compass.
 
-        sudo gem install sass
-        sudo gem install compass
+        gem install sass
+        gem install compass
 
 - Install CoffeeScript dependencies
 
@@ -30,12 +44,14 @@ That second part is kinda a pain in the butt, but it's a cool little language.
 
 #### How to run the project locally
 
-- Install Python (should already exist).
-- Install Google AppEngine SDK http://code.google.com/appengine/downloads.html.
 - Clone the repo:
 
         git clone git@github.com:hijonathan/designsnapper.git
 
-Add the project to your AppEngine launcher or run it from the command line using dev_appserver.py. You'll also need to install Ruby and Compass if you plan to make design changes. Alternatively, you can simply run the Django project from the command line:
+- Boot the server
 
         python manage.py runserver [port]
+
+If you're running OS X and have a virtual machine (e.g. Parallels/VMWare) that you'd like to use as well, use this to boot the server instead:
+
+        python manage.py runserver [port]:0.0.0.0
