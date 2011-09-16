@@ -12,9 +12,9 @@ urlpatterns = patterns('',
     (r'^algorithms/$', direct_to_template, {'template': 'marketing/platform-algorithms.html'}),
     (r'^analysis/$', direct_to_template, {'template': 'marketing/platform-analysis.html'}),
     (r'^notifications/$', direct_to_template, {'template': 'marketing/platform-notifications.html'}),
-    (r'^demo/$', views.DemoAddPageView.as_view()),
+    (r'^details/$', direct_to_template, {'template': 'marketing/platform-details.html'}),
 
-    (r'^demo/$', direct_to_template, {'template': 'marketing/demo.html'}),
+    (r'^demo/$', views.DemoAddPageView.as_view()),
 
     (r'^pricing/$', direct_to_template, {'template': 'marketing/pricing.html'})
 )
