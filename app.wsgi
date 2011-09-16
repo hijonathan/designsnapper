@@ -1,5 +1,5 @@
 import os, sys
-sys.path.append('/usr/local/django')
+sys.path.append('/var/www/chief/public_html')
 os.environ['DJANGO_SETTINGS_MODULE'] = 'designsnapper.settings'
 
 import django.core.handlers.wsgi
